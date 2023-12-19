@@ -7,6 +7,11 @@ void Animals::showInfos() {
 	cout << Animals::age << endl;
 	cout << Animals::locationFound << endl;
 	cout << Animals::description << endl;
+	cout << Animals::name << endl;
+	cout << Animals::surname << endl;
+	cout << Animals::phoneNumber << endl;
+	cout << Animals::emailAdress << endl;
+	cout << Animals::personDescription << endl;
 }
 
 string Animals::getTur() {

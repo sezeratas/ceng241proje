@@ -3,7 +3,16 @@
 #include<iostream>
 using namespace std;
 
-class Animals {
+class Person {
+public:
+    string name;
+    string surname;
+    long int phoneNumber;
+    string emailAdress;
+    string personDescription;
+};
+
+class Animals : public Person {
 
 private:
     string tur;
