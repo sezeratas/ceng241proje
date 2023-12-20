@@ -8,8 +8,8 @@ int main()
     Animals animal1;
     Animals animal2;
 
-    animal1.setTur("Dog");
-    animal1.setCins("Golden");
+    animal1.setSpecies("Dog");
+    animal1.setBreed("Golden");
     animal1.setGender("Male");
     animal1.setAge(2);
     animal1.setLocationFound("Cankaya Uni");
@@ -20,8 +20,8 @@ int main()
     animal1.emailAdress = "aaaaaa@gmail.com";
     animal1.personDescription = "-----";
 
-    animal2.setTur("Cat");
-    animal2.setCins("Tekir");
+    animal2.setSpecies("Cat");
+    animal2.setBreed("Tekir");
     animal2.setGender("Female");
     animal2.setAge(2);
     animal2.setLocationFound("Koru");

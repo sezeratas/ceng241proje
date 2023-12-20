@@ -15,8 +15,8 @@ public:
 class Animals : public Person {
 
 private:
-    string tur;
-    string cins;
+    string species;
+    string breed;
     string gender;
     int age;
     string locationFound;
@@ -25,11 +25,11 @@ private:
 public:
     void showInfos();   // Hayvanın bütün bilgilerine anlık erişim.
 
-    string getTur();
-    void setTur(string a);
+    string getSpecies();
+    void setSpecies(string a);
 
-    string getCins();
-    void setCins(string b);
+    string getBreed();
+    void setBreed(string b);
 
     string getGender();
     void setGender(string c);

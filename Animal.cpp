@@ -1,8 +1,8 @@
 #include "Animal.h"
 
 void Animals::showInfos() {
-	cout << Animals::tur << endl;
-	cout << Animals::cins << endl;
+	cout << Animals::species << endl;
+	cout << Animals::breed << endl;
 	cout << Animals::gender << endl;
 	cout << Animals::age << endl;
 	cout << Animals::locationFound << endl;
@@ -14,18 +14,18 @@ void Animals::showInfos() {
 	cout << Animals::personDescription << endl;
 }
 
-string Animals::getTur() {
-	return tur;
+string Animals::getSpecies() {
+	return species;
 }
-void Animals::setTur(string a) {
-	tur = a;
+void Animals::setSpecies(string a) {
+	species = a;
 }
 
-string Animals::getCins() {
-	return cins;
+string Animals::getBreed() {
+	return breed;
 }
-void Animals::setCins(string b) {
-	cins = b;
+void Animals::setBreed(string b) {
+	breed = b;
 }
 
 string Animals::getGender() {
