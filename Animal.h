@@ -6,8 +6,8 @@ using namespace std;
 class Animals {
 
 private:
-    string tur;
-    string cins;
+    string species;
+    string breed;
     string gender;
     int age;
     string locationFound;
