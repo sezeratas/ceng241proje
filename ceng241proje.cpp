@@ -7,6 +7,37 @@ int main()
 {
     Animals animal1;
     Animals animal2;
+    int mainchoice;
+    cout << "Stray Animals Platform" << endl;
+    cout << "Please choose the operation:" << endl;
+    cout << "1.My advertisements" << endl;// add add,delete add ,fix add 3 alt dal
+    cout << "2.Show all advertisements." << endl;
+    cout << "3.Report an animal." << endl; // hayvan bildirme sebebi
+    cout << "4.Adopt an animal" << endl;// sectýkten sonra barýnak ya da baþkasýndan diye iki secenek sunacak
+    cout << "5.Adopt my  animal." << endl;
+    cout << "6.Exit" << endl;
+    cin >> mainchoice;
+    if (mainchoice == 1) {
+        //showmyads();
+    }
+    else if (mainchoice == 2) {
+        //showallads();
+    }
+    else if (mainchoice == 3) {
+        //reportanimal();
+    }
+    else if (mainchoice == 4) {
+        //adoptanimal();
+    }
+    else if (mainchoice == 5) {
+        //adoptmyanimal();
+    }
+    else if (mainchoice == 6) {
+        return 1;
+    }
+    else {
+       // cout << "Invalid choice.Please choose 1-6."
+    }
 
     animal1.setTur("Dog");
     animal1.setCins("Golden");

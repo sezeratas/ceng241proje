@@ -1,4 +1,4 @@
-﻿﻿#pragma once
+﻿#pragma once
 
 #include<iostream>
 using namespace std;
@@ -15,8 +15,8 @@ public:
 class Animals : public Person {
 
 private:
-    string tur;
-    string cins;
+    string species;
+    string breed;
     string gender;
     int age;
     string locationFound;
