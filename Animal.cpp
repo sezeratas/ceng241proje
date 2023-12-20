@@ -1,26 +1,31 @@
 #include "Animal.h"
 
 void Animals::showInfos() {
-	cout << Animals::species << endl;
-	cout << Animals::breed << endl;
+	cout << Animals::tur << endl;
+	cout << Animals::cins << endl;
 	cout << Animals::gender << endl;
 	cout << Animals::age << endl;
 	cout << Animals::locationFound << endl;
 	cout << Animals::description << endl;
+	cout << Animals::name << endl;
+	cout << Animals::surname << endl;
+	cout << Animals::phoneNumber << endl;
+	cout << Animals::emailAdress << endl;
+	cout << Animals::personDescription << endl;
 }
 
 string Animals::getTur() {
-	return species;
+	return tur;
 }
 void Animals::setTur(string a) {
-	species = a;
+	tur = a;
 }
 
 string Animals::getCins() {
-	return breed;
+	return cins;
 }
 void Animals::setCins(string b) {
-	breed = b;
+	cins = b;
 }
 
 string Animals::getGender() {
