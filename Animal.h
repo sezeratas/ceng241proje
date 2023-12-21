@@ -42,4 +42,8 @@ public:
 
     string getDescription();
     void setDescription(string f);
+
+    void addAdvertisement() {
+
+    }
 };
