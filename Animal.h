@@ -3,16 +3,18 @@
 #include<iostream>
 using namespace std;
 
+// Person class is a subclass of Animal class.
 class Person {
-public:
+protected:
     string name;
     string surname;
     long int phoneNumber;
-    string emailAdress;
+    string emailAddress;
     string personDescription;
+
 };
 
-class Animals : public Person {
+class Animals : private Person {
 
 private:
     string species;
@@ -25,21 +27,37 @@ private:
 public:
     void showInfos();   // Hayvanın bütün bilgilerine anlık erişim.
 
+    // Encapsulation
     string getSpecies();
-    void setSpecies(string a);
+    void setSpecies(string species);
 
     string getBreed();
-    void setBreed(string b);
+    void setBreed(string breed);
 
     string getGender();
-    void setGender(string c);
+    void setGender(string gender);
 
     int getAge();
-    void setAge(int d);
+    void setAge(int page);
 
     string getLocationFound();
-    void setLocationFound(string e);
+    void setLocationFound(string locationfound);
 
     string getDescription();
-    void setDescription(string f);
+    void setDescription(string description);
+
+    string getName();
+    void setName(string name);
+
+    string getSurname();
+    void setSurname(string surname);
+
+    long int getPhoneNumber();
+    void setPhoneNumber(long int phoneNumber);
+
+    string getEmailAddress();
+    void setEmailAddress(string emailAddress);
+
+    string getPersonDescription();
+    void setPersonDescription(string personDescription);
 };
