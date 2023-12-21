@@ -17,27 +17,6 @@ int main()
     cout << "5.Adopt my  animal." << endl;
     cout << "6.Exit" << endl;
     cin >> mainchoice;
-    if (mainchoice == 1) {
-        //showmyads();
-    }
-    else if (mainchoice == 2) {
-        //showallads();
-    }
-    else if (mainchoice == 3) {
-        //reportanimal();
-    }
-    else if (mainchoice == 4) {
-        //adoptanimal();
-    }
-    else if (mainchoice == 5) {
-        //adoptmyanimal();
-    }
-    else if (mainchoice == 6) {
-        return 1;
-    }
-    else {
-       // cout << "Invalid choice.Please choose 1-6."
-    }
 
     animal1.setTur("Dog");
     animal1.setCins("Golden");
