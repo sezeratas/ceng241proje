@@ -10,6 +10,11 @@ void Hi()
     cout << "hello" << endl;
 }
 
+/*void showInfos() {
+	showInfos un burada olmasi lazim.
+}*/
+
+
 void inputAdvertisement() {
 
 	/*string species;
