@@ -10,12 +10,7 @@ void Hi()
     cout << "hello" << endl;
 }
 
-/*void showInfos() {
-	showInfos un burada olmasi lazim.
-}*/
-
-
-void inputAdvertisement() {
+/*void inputAdvertisement() {
 
 	/*string species;
 	string breed;
@@ -57,4 +52,4 @@ void inputAdvertisement() {
 	cin >> animalDescription;
 
 	animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;*/
-}
+}*/

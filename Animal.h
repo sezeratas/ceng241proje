@@ -27,9 +27,8 @@ private:
     string gender;
     int age;
     string locationFound;
-    string description;
-
-    string animalCode;
+    string animalDescription;
+    //string animalCode;
 public:
 
     //Constructor and Destructor
@@ -37,6 +36,7 @@ public:
     ~Animals();
 
     void showInfos();   // Hayvanın bütün bilgilerine anlık erişim.
+    //void inputAdvertisement();
 
     // Encapsulation for Animal class
     string getSpecies();
@@ -55,7 +55,7 @@ public:
     void setLocationFound(string locationfound);
 
     string getDescription();
-    void setDescription(string description);
+    void setDescription(string animalDescription);
 
     // Encapsulation for Person class
 

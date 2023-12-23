@@ -10,20 +10,61 @@ void Animals::showInfos() {
 	cout << Animals::gender << endl;
 	cout << Animals::age << endl;
 	cout << Animals::locationFound << endl;
-	cout << Animals::description << endl;
+	cout << Animals::animalDescription << endl;
 	cout << Animals::id << endl;
 	cout << Animals::name << endl;
 	cout << Animals::surname << endl;
 	cout << Animals::phoneNumber << endl;
 	cout << Animals::emailAddress << endl;
-	cout << Animals::personDescription << endl;
+	cout << Animals::personDescription << endl << endl;
 }
+
+/*  add fonksiyonu mainFunc icinde olacak.
+void Animals::inputAdvertisement() {
+
+	cout << "Input the animal's species: ";
+	cin >> species;
+
+	cout << "Input the animal's breed: ";
+	cin >> breed;
+
+	cout << "Input the animal's gender: ";
+	cin >> gender;
+
+	cout << "Input the animal's age: ";
+	cin >> age;
+	cout << "Input the animal's location lost (or found): ";
+	cin >> locationFound;
+
+	cout << "Input the animal's descrition: ";
+	cin >> animalDescription;
+	cout << "Input the pet owner's name: ";
+	cin >> name;
+	cout << "Input the pet owner's surname: ";
+	cin >> surname;
+	cout << "Input the pet owner's phone numbers: ";
+	cin >> phoneNumber;
+	cout << "Input the pet owner's email address: ";
+	cin >> emailAddress;
+	cout << "Input the pet owner's descrition: ";
+	cin >> personDescription;
+	cout << "*****************************" << endl;
+
+	//animalCode = locationFound + "/" + species + "/" + breed; + "/" + animalcounter;
+}*/
 
 
 //Constructors and Destructors
 Person::Person() {
 	usercounter++;
 	id = "@user" + to_string(usercounter);
+
+	name = "-Not known-";
+	surname = "-Not known-";
+	phoneNumber = "-Not known-";
+	emailAddress = "-Not known-";
+	personDescription = "-Not known-";
+
 	cout << "New person created." << endl;
 	cout << "The person's id is: " << id << endl;
 	cout << "*****************************" << endl;
@@ -31,8 +72,15 @@ Person::Person() {
 
 Animals::Animals() {
 
+	species = "-Not known-";
+	breed = "-Not known-";
+	gender = "-Not known-";
+	age = -1;
+	locationFound = "-Not known-";
+	animalDescription = "-Not known-";
+
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
-	cout << "New animal created." << endl << endl;
+	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
 
 Person::~Person() {
@@ -82,10 +130,10 @@ void Animals::setLocationFound(string locationFound) {
 }
 
 string Animals::getDescription() {
-	return description;
+	return animalDescription;
 }
 void Animals::setDescription(string description) {
-	this->description = description;
+	this->animalDescription = description;
 }
 
 //  Encapsulation for Person class variables.

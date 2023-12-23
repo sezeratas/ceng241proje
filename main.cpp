@@ -8,6 +8,7 @@ int main()
 {
     Animals animal1;
     Animals animal2;
+    Animals animal3;
 
     Hi();
 
@@ -21,7 +22,6 @@ int main()
     animal1.setSurname("Atas");
     animal1.setPhoneNumber("0534 11111");
     animal1.setEmailAddress("aaaaaa@gmail.com");
-    animal1.setPersonDescription("-----");
 
     animal2.setSpecies("Cat");
     animal2.setBreed("Tekir");
@@ -33,11 +33,14 @@ int main()
     animal2.setSurname("Ozcan");
     animal2.setPhoneNumber("0535 666666");
     animal2.setEmailAddress("yyyyyyy@gmail.com");
-    animal2.setPersonDescription("-----");
 
     animal1.showInfos();
-    cout << endl;
     animal2.showInfos();
+    animal3.showInfos();
+
+    //animal3.inputAdvertisement();
+
+    animal3.showInfos();
 
     return 0;
 }
