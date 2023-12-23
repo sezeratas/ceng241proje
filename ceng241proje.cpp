@@ -17,10 +17,9 @@ int main()
     animal1.setAge(2);
     animal1.setLocationFound("Cankaya Uni");
     animal1.setDescription("The red collar");
-    animal1.setId(1);
     animal1.setName("Sezer");
     animal1.setSurname("Atas");
-    animal1.setPhoneNumber(111111);
+    animal1.setPhoneNumber("0534 11111");
     animal1.setEmailAddress("aaaaaa@gmail.com");
     animal1.setPersonDescription("-----");
 
@@ -29,12 +28,11 @@ int main()
     animal2.setGender("Female");
     animal2.setAge(2);
     animal2.setLocationFound("Koru");
-    animal2.setDescription("-----");
-    animal2.setId(2);
-    animal2.setName("-----");
-    animal2.setSurname("-----");
-    animal2.setPhoneNumber(0);
-    animal2.setEmailAddress("-----");
+    animal2.setDescription("Blue eyes.");
+    animal2.setName("Yusuf");
+    animal2.setSurname("Ozcan");
+    animal2.setPhoneNumber("0535 666666");
+    animal2.setEmailAddress("yyyyyyy@gmail.com");
     animal2.setPersonDescription("-----");
 
     animal1.showInfos();

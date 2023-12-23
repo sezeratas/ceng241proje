@@ -9,7 +9,7 @@ protected:
     string id;
     string name;
     string surname;
-    long int phoneNumber;
+    string phoneNumber;
     string emailAddress;
     string personDescription;
 
@@ -29,8 +29,7 @@ private:
     string locationFound;
     string description;
 
-    //string animalCode;  Her hayvan icin kod olusturabiliriz. Hayvanlarin bulundugu bolgelere gore kodlar siniflanir. 
-    // Kod icinde Posta kodu, hayvanin turu, cinsi ve kacinci oldugu olabilir. Ornegin 06815/Dog/Golden/2 gibi.   
+    string animalCode;
 public:
 
     //Constructor and Destructor
@@ -39,7 +38,7 @@ public:
 
     void showInfos();   // Hayvanın bütün bilgilerine anlık erişim.
 
-    // Encapsulation
+    // Encapsulation for Animal class
     string getSpecies();
     void setSpecies(string species);
 
@@ -58,8 +57,10 @@ public:
     string getDescription();
     void setDescription(string description);
 
+    // Encapsulation for Person class
+
     string getId();
-    void setId(int idNumber);
+    //void setId(int idNumber);
 
     string getName();
     void setName(string name);
@@ -67,8 +68,8 @@ public:
     string getSurname();
     void setSurname(string surname);
 
-    long int getPhoneNumber();
-    void setPhoneNumber(long int phoneNumber);
+    string getPhoneNumber();
+    void setPhoneNumber(string phoneNumber);
 
     string getEmailAddress();
     void setEmailAddress(string emailAddress);

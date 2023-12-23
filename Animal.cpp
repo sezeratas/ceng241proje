@@ -1,4 +1,8 @@
 #include "Animal.h"
+#include <string>
+
+int usercounter = 0;
+//int animalcounter = 1;
 
 void Animals::showInfos() {
 	cout << Animals::species << endl;
@@ -18,20 +22,27 @@ void Animals::showInfos() {
 
 //Constructors and Destructors
 Person::Person() {
+	usercounter++;
+	id = "@user" + to_string(usercounter);
 	cout << "New person created." << endl;
+	cout << "The person's id is: " << id << endl;
+	cout << "*****************************" << endl;
 }
 
 Animals::Animals() {
-	cout << "New animal created." << endl;
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+	cout << "New animal created." << endl << endl;
 }
 
 Person::~Person() {
-	cout << "Person" << name <<"deleted." << endl;
+	cout << "Person " << id <<"  deleted." << endl << endl;
+	usercounter--;
 }
 
 //Hayvan kodu yaparsak kullanilabilir veya direkt Animal deleted yapilabilir.
 Animals::~Animals() {
-	cout << "Animal deleted." << endl;
+	cout << "Animal deleted." << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.
@@ -82,9 +93,11 @@ void Animals::setDescription(string description) {
 string Animals::getId() {
 	return id;
 }
+
+/*Mantik hatasi olusturabilir.
 void Animals::setId(int idNumber) {
-	id = "@user" + idNumber;
-}
+	id = "@user" + to_string(idNumber);
+}*/
 
 string Animals::getName() {
 	return name;
@@ -100,10 +113,10 @@ void Animals::setSurname(string surname) {
 	this->surname = surname;
 }
 
-long int Animals::getPhoneNumber() {
+string Animals::getPhoneNumber() {
 	return phoneNumber;
 }
-void Animals::setPhoneNumber(long int phoneNumber) {
+void Animals::setPhoneNumber(string phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 
