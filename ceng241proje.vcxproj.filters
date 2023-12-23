@@ -26,8 +26,8 @@
     <ClInclude Include="Animal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mainFuncHeader.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="mainFunc.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
