@@ -4,7 +4,7 @@
 int usercounter = 0;
 //int animalcounter = 1;
 
-void Animals::showInfos() {
+/*void Animals::showInfos() {
 	cout << Animals::species << endl;
 	cout << Animals::breed << endl;
 	cout << Animals::gender << endl;
@@ -17,42 +17,7 @@ void Animals::showInfos() {
 	cout << Animals::phoneNumber << endl;
 	cout << Animals::emailAddress << endl;
 	cout << Animals::personDescription << endl << endl;
-}
-
-/*  add fonksiyonu mainFunc icinde olacak.
-void Animals::inputAdvertisement() {
-
-	cout << "Input the animal's species: ";
-	cin >> species;
-
-	cout << "Input the animal's breed: ";
-	cin >> breed;
-
-	cout << "Input the animal's gender: ";
-	cin >> gender;
-
-	cout << "Input the animal's age: ";
-	cin >> age;
-	cout << "Input the animal's location lost (or found): ";
-	cin >> locationFound;
-
-	cout << "Input the animal's descrition: ";
-	cin >> animalDescription;
-	cout << "Input the pet owner's name: ";
-	cin >> name;
-	cout << "Input the pet owner's surname: ";
-	cin >> surname;
-	cout << "Input the pet owner's phone numbers: ";
-	cin >> phoneNumber;
-	cout << "Input the pet owner's email address: ";
-	cin >> emailAddress;
-	cout << "Input the pet owner's descrition: ";
-	cin >> personDescription;
-	cout << "*****************************" << endl;
-
-	//animalCode = locationFound + "/" + species + "/" + breed; + "/" + animalcounter;
 }*/
-
 
 //Constructors and Destructors
 Person::Person() {
@@ -75,7 +40,7 @@ Animals::Animals() {
 	species = "-Not known-";
 	breed = "-Not known-";
 	gender = "-Not known-";
-	age = -1;
+	age = "-Not known-";
 	locationFound = "-Not known-";
 	animalDescription = "-Not known-";
 
@@ -115,10 +80,10 @@ void Animals::setGender(string gender) {
 	this->gender = gender;
 }
 
-int Animals::getAge() {
+string Animals::getAge() {
 	return age;
 }
-void Animals::setAge(int age) {
+void Animals::setAge(string age) {
 	this->age = age;
 }
 
@@ -129,10 +94,10 @@ void Animals::setLocationFound(string locationFound) {
 	this->locationFound = locationFound;
 }
 
-string Animals::getDescription() {
+string Animals::getAnimalDescription() {
 	return animalDescription;
 }
-void Animals::setDescription(string description) {
+void Animals::setAnimalDescription(string description) {
 	this->animalDescription = description;
 }
 

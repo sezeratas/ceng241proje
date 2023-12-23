@@ -10,12 +10,28 @@ void Hi()
     cout << "hello" << endl;
 }
 
-/*void inputAdvertisement() {
+void showInfos(Animals animal) {
+	cout << animal.getSpecies() << endl;
+	cout << animal.getBreed() << endl;
+	cout << animal.getGender() << endl;
+	cout << animal.getAge() << endl;
+	cout << animal.getLocationFound() << endl;
+	cout << animal.getAnimalDescription() << endl;
 
-	/*string species;
+	cout << animal.getName() << endl;
+	cout << animal.getSurname() << endl;
+	cout << animal.getPhoneNumber() << endl;
+	cout << animal.getEmailAddress() << endl;
+	cout << animal.getPersonDescription() << endl;
+}
+
+void AddAdvertisement(Animals* animal) {
+
+	//  Local variable to input
+	string species;
 	string breed;
 	string gender;
-	int age;
+	string age;
 	string locationFound;
 	string animalDescription;
 	string name;
@@ -24,32 +40,79 @@ void Hi()
 	string emailAddress;
 	string personDescription;
 
-	cout << "Input the animal's species: " << endl;
+	//Animal class inputs
+	cout << "Input the animal's species: ";
 	cin >> species;
-	Animals::setSpecies(species);
+	animal->setSpecies(species);
 
-	cout << "Input the animal's breed: " << endl;
+	cout << "Input the animal's breed: ";
 	cin >> breed;
-	Animals::setBreed()
+	animal->setBreed(breed);
 
-	cout << "Input the animal's gender: " << endl;
+	cout << "Input the animal's gender: ";
 	cin >> gender;
-	cout << "Input the animal's age: " << endl;
-	cin >> age;
-	cout << "Input the animal's location lost (or found): " << endl;
-	cin >> locationFound;
-	cout << "Input the animal's descrition: " << endl;
-	cin >> animalDescription;
-	cout << "Input the pet owner's name: " << endl;
-	cin >> name;
-	cout << "Input the pet owner's surname: " << endl;
-	cin >> surname;
-	cout << "Input the pet owner's phone numbers: " << endl;
-	cin >> phoneNumber;
-	cout << "Input the pet owner's email address: " << endl;
-	cin >> emailAddress;
-	cout << "Input the pet owner's descrition: " << endl;
-	cin >> animalDescription;
+	animal->setGender(gender);
 
-	animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;*/
+	cout << "Input the animal's age: ";
+	cin >> age;
+	animal->setAge(age);
+
+	cout << "Input the animal's location lost (or found): ";
+	cin >> locationFound;
+	animal->setLocationFound(locationFound);
+
+	cout << "Input the animal's descrition: ";
+	cin >> animalDescription;
+	animal->setAnimalDescription(animalDescription);
+
+	//Person class inputs
+	cout << "Input the pet owner's name: ";
+	cin >> name;
+	animal->setName(name);
+
+	cout << "Input the pet owner's surname: ";
+	cin >> surname;
+	animal->setSurname(surname);
+
+	cout << "Input the pet owner's phone numbers: ";
+	cin >> phoneNumber;
+	animal->setPhoneNumber(phoneNumber);
+
+	cout << "Input the pet owner's email address: ";
+	cin >> emailAddress;
+	animal->setEmailAddress(emailAddress);
+
+	cout << "Input the pet owner's descrition: ";
+	cin >> animalDescription;
+	animal->setAnimalDescription(animalDescription);
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+}
+
+/*void initialAnimals() {
+	Animals animal1;
+	Animals animal2;
+	Animals animal3;
+
+	animal1.setSpecies("Dog");
+	animal1.setBreed("Golden");
+	animal1.setGender("Male");
+	animal1.setAge("2 years old.");
+	animal1.setLocationFound("Cankaya Uni");
+	animal1.setAnimalDescription("The red collar");
+	animal1.setName("Sezer");
+	animal1.setSurname("Atas");
+	animal1.setPhoneNumber("0534 11111");
+	animal1.setEmailAddress("aaaaaa@gmail.com");
+
+	animal2.setSpecies("Cat");
+	animal2.setBreed("Tekir");
+	animal2.setGender("Female");
+	animal2.setAge("5 months old.");
+	animal2.setLocationFound("Koru");
+	animal2.setAnimalDescription("Blue eyes.");
+	animal2.setName("Yusuf");
+	animal2.setSurname("Ozcan");
+	animal2.setPhoneNumber("0535 666666");
+	animal2.setEmailAddress("yyyyyyy@gmail.com");
 }*/
