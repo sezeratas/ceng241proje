@@ -14,6 +14,25 @@ void Animals::showInfos() {
 	cout << Animals::personDescription << endl;
 }
 
+
+//Constructors and Destructors
+Person::Person() {
+	cout << "New person created." << endl;
+}
+
+Animals::Animals() {
+	cout << "New animal created." << endl;
+}
+
+Person::~Person() {
+	cout << "Person" << name <<"deleted." << endl;
+}
+
+//Hayvan kodu yaparsak kullanilabilir veya direkt Animal deleted yapilabilir.
+Animals::~Animals() {
+	cout << "Animal deleted." << endl;
+}
+
 //  Encapsulation for Animal class variables.
 string Animals::getSpecies() {
 	return species;

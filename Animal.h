@@ -12,6 +12,10 @@ protected:
     string emailAddress;
     string personDescription;
 
+public:
+    //Constructor and Destructor
+    Person();
+    ~Person();
 };
 
 class Animals : private Person {
@@ -23,8 +27,14 @@ private:
     int age;
     string locationFound;
     string description;
-
+    // string animalCode;  Her hayvan icin kod olusturabiliriz. Hayvanlarin bulundugu bolgelere gore kodlar siniflanir. 
+    // Kod icinde Posta kodu, hayvanin turu, cinsi ve kacinci oldugu olabilir. Ornegin 06815/Dog/Golden/2 gibi.   
 public:
+
+    //Constructor and Destructor
+    Animals();
+    ~Animals();
+
     void showInfos();   // Hayvanın bütün bilgilerine anlık erişim.
 
     // Encapsulation
