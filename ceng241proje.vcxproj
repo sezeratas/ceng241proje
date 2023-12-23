@@ -129,10 +129,10 @@
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="ceng241proje.cpp" />
-    <ClCompile Include="mainFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
+    <ClInclude Include="mainFuncHeader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

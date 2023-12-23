@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Animal.h"
+#include "mainFuncHeader.h"
 
 using namespace std;
 
@@ -7,7 +8,8 @@ int main()
 {
     Animals animal1;
     Animals animal2;
-    Hello();
+
+    Hi();
 
     animal1.setSpecies("Dog");
     animal1.setBreed("Golden");
