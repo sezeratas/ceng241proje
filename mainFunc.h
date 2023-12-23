@@ -7,7 +7,7 @@ using namespace std;
 
 void Hi()
 {
-    cout << "hello" << endl;
+    cout << "hello dear kaybedenler klubu" << endl;
 }
 
 /*void inputAdvertisement() {
