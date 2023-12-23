@@ -7,6 +7,7 @@ void Animals::showInfos() {
 	cout << Animals::age << endl;
 	cout << Animals::locationFound << endl;
 	cout << Animals::description << endl;
+	cout << Animals::id << endl;
 	cout << Animals::name << endl;
 	cout << Animals::surname << endl;
 	cout << Animals::phoneNumber << endl;
@@ -77,6 +78,14 @@ void Animals::setDescription(string description) {
 }
 
 //  Encapsulation for Person class variables.
+
+string Animals::getId() {
+	return id;
+}
+void Animals::setId(int idNumber) {
+	id = "@user" + idNumber;
+}
+
 string Animals::getName() {
 	return name;
 }

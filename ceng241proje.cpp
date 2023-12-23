@@ -7,6 +7,7 @@ int main()
 {
     Animals animal1;
     Animals animal2;
+    Hello();
 
     animal1.setSpecies("Dog");
     animal1.setBreed("Golden");
@@ -14,6 +15,7 @@ int main()
     animal1.setAge(2);
     animal1.setLocationFound("Cankaya Uni");
     animal1.setDescription("The red collar");
+    animal1.setId(1);
     animal1.setName("Sezer");
     animal1.setSurname("Atas");
     animal1.setPhoneNumber(111111);
@@ -26,6 +28,7 @@ int main()
     animal2.setAge(2);
     animal2.setLocationFound("Koru");
     animal2.setDescription("-----");
+    animal2.setId(2);
     animal2.setName("-----");
     animal2.setSurname("-----");
     animal2.setPhoneNumber(0);

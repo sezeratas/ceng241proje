@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="ceng241proje.cpp" />
+    <ClCompile Include="mainFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />

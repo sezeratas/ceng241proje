@@ -6,6 +6,7 @@ using namespace std;
 // Person class is a subclass of Animal class.
 class Person {
 protected:
+    string id;
     string name;
     string surname;
     long int phoneNumber;
@@ -27,7 +28,8 @@ private:
     int age;
     string locationFound;
     string description;
-    // string animalCode;  Her hayvan icin kod olusturabiliriz. Hayvanlarin bulundugu bolgelere gore kodlar siniflanir. 
+
+    //string animalCode;  Her hayvan icin kod olusturabiliriz. Hayvanlarin bulundugu bolgelere gore kodlar siniflanir. 
     // Kod icinde Posta kodu, hayvanin turu, cinsi ve kacinci oldugu olabilir. Ornegin 06815/Dog/Golden/2 gibi.   
 public:
 
@@ -55,6 +57,9 @@ public:
 
     string getDescription();
     void setDescription(string description);
+
+    string getId();
+    void setId(int idNumber);
 
     string getName();
     void setName(string name);
