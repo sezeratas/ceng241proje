@@ -6,42 +6,17 @@ using namespace std;
 
 int main()
 {
-    //initialAnimals();
-    Animals animal1;
-    Animals animal2;
-    Animals animal3;
+    AddAdvertisement();
 
-    Hi();
+    initialAnimals();
 
-    animal1.setSpecies("Dog");
-    animal1.setBreed("Golden");
-    animal1.setGender("Male");
-    animal1.setAge("2 years old.");
-    animal1.setLocationFound("Cankaya Uni");
-    animal1.setAnimalDescription("The red collar");
-    animal1.setName("Sezer");
-    animal1.setSurname("Atas");
-    animal1.setPhoneNumber("0534 11111");
-    animal1.setEmailAddress("aaaaaa@gmail.com");
+    AddAdvertisement();
 
-    animal2.setSpecies("Cat");
-    animal2.setBreed("Tekir");
-    animal2.setGender("Female");
-    animal2.setAge("5 months old.");
-    animal2.setLocationFound("Koru");
-    animal2.setAnimalDescription("Blue eyes.");
-    animal2.setName("Yusuf");
-    animal2.setSurname("Ozcan");
-    animal2.setPhoneNumber("0535 666666");
-    animal2.setEmailAddress("yyyyyyy@gmail.com");
-
-    showInfos(animal1);
-    showInfos(animal2);
-    showInfos(animal3);
-
-    AddAdvertisement(&animal1);
-
-    showInfos(animal1);
+    showInfos(animalV[0]);
+    showInfos(animalV[1]);
+    showInfos(animalV[2]);
+    showInfos(animalV[3]);
+    showInfos(animalV[4]);
 
     /*int mainchoice;
     do {
@@ -134,6 +109,6 @@ int main()
             cout << "Invalid choice.Please choose 1-6.";
         }
 
-    } while (mainchoice != 6);
-    return 0;*/
+    } while (mainchoice != 6);*/
+    return 0;
 }

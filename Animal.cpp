@@ -1,23 +1,9 @@
 #include "Animal.h"
 #include <string>
 
-int usercounter = 0;
-//int animalcounter = 1;
+using namespace std;
 
-/*void Animals::showInfos() {
-	cout << Animals::species << endl;
-	cout << Animals::breed << endl;
-	cout << Animals::gender << endl;
-	cout << Animals::age << endl;
-	cout << Animals::locationFound << endl;
-	cout << Animals::animalDescription << endl;
-	cout << Animals::id << endl;
-	cout << Animals::name << endl;
-	cout << Animals::surname << endl;
-	cout << Animals::phoneNumber << endl;
-	cout << Animals::emailAddress << endl;
-	cout << Animals::personDescription << endl << endl;
-}*/
+int usercounter = 0;
 
 //Constructors and Destructors
 Person::Person() {
@@ -30,9 +16,9 @@ Person::Person() {
 	emailAddress = "-Not known-";
 	personDescription = "-Not known-";
 
-	cout << "New person created." << endl;
+	/*cout << "New person created." << endl;
 	cout << "The person's id is: " << id << endl;
-	cout << "*****************************" << endl;
+	cout << "*****************************" << endl;*/
 }
 
 Animals::Animals() {
@@ -45,17 +31,17 @@ Animals::Animals() {
 	animalDescription = "-Not known-";
 
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
-	cout << "New animal created. (By " << id << ")" << endl << endl;
+	
+	//cout << "New animal created. (By " << id << ")" << endl << endl;
 }
 
 Person::~Person() {
-	cout << "Person " << id <<"  deleted." << endl << endl;
+	//cout << "Person " << id <<"  deleted." << endl << endl;
 	usercounter--;
 }
 
-//Hayvan kodu yaparsak kullanilabilir veya direkt Animal deleted yapilabilir.
 Animals::~Animals() {
-	cout << "Animal deleted." << endl << endl;
+	//cout << "Animal deleted." << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.
@@ -143,6 +129,6 @@ void Animals::setEmailAddress(string emailAddress) {
 string Animals::getPersonDescription() {
 	return personDescription;
 }
-void Animals::setPersonDescription(string persondescription) {
-	this->personDescription = persondescription;
+void Animals::setPersonDescription(string personDescription) {
+	this->personDescription = personDescription;
 }
