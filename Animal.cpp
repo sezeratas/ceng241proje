@@ -21,6 +21,20 @@ Person::Person() {
 	cout << "*****************************" << endl;
 }
 
+/*Person::Person(string id) {
+	usercounter++;
+	this->id = id;
+
+	name = "-Not known-";
+	surname = "-Not known-";
+	phoneNumber = "-Not known-";
+	emailAddress = "-Not known-";
+	personDescription = "-Not known-";
+
+	cout << "Person " << id << " updated." << endl;
+	cout << "*****************************" << endl;
+}*/
+
 Animals::Animals() {
 
 	species = "-Not known-";

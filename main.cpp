@@ -40,13 +40,12 @@ int main()
                     AddAdvertisement();
                     break;
                 case 2:
-                    DeleteAllAdvertisements(); // deleteadd();
+                    DeleteAdvertisement(personsAnimalV[0]->getId());
                     break;
                 case 3:
-                    // editadd();
+                    EditAdvertisements();
                     break;
                 case 4:
-                    showVectorInfos(&animalV);
                     showVectorInfos(&personsAnimalV);
                     break;
                 case 5:
@@ -54,7 +53,7 @@ int main()
                     // it will return to the main menu
                     break;
                 default:
-                    cout << "Invalid choice. Please choose 1-5." << endl;
+                    std::cout << "Invalid choice. Please choose 1-5." << endl;
                 }
             } while (!returnToMainMenu);
             break;

@@ -10,6 +10,18 @@ vector<Animals*> personsAnimalV;
 
 using namespace std;
 
+//  Karisikligi onlemek ve okunabilirligi arttirmak icin.
+void showInfos(Animals* animal);
+void AddAdvertisement();
+void DeleteAdvertisement(string userid);
+void initialAnimals();
+void mainScreen();
+void idAuthentication(string user);
+void myAdvertisements();
+void showVectorInfos(vector<Animals*>* pV);
+void DeleteAllAdvertisements();
+void EditAdvertisements();
+
 void showInfos(Animals* animal) {
 	cout << "Animal's species: " << animal->getSpecies() << endl;
 	cout << "Animal's breed: " << animal->getBreed() << endl;
@@ -96,6 +108,14 @@ void AddAdvertisement() {
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
 }
 
+void DeleteAdvertisement(string userid) {
+	idAuthentication(userid);
+	for (int i = 0; i < personsAnimalV.size(); i++) {
+		delete personsAnimalV[i];
+	}
+	personsAnimalV.clear();
+}
+
 void initialAnimals() {
 
 	Animals* animal1 = new Animals();
@@ -171,12 +191,6 @@ void showVectorInfos(vector<Animals*>* pV) {
 	}
 }
 
-/*void ShowAllAdvertisements() {
-	for (int i = 0; i < animalV.size(); i++) {
-		showInfos(animalV[i]);
-	}
-}*/
-
 void DeleteAllAdvertisements() {
 	for (int i = 0; i < animalV.size(); i++) {
 		delete animalV[i];
@@ -184,3 +198,118 @@ void DeleteAllAdvertisements() {
 	animalV.clear();
 	personsAnimalV.clear();
 }
+
+void EditAdvertisements() {
+	int choice;
+	std::cout << "Select the information you want to change: " << endl;
+	std::cout << "1) Animal's species " << endl;
+	std::cout << "2) Animal's breed " << endl;
+	std::cout << "3) Animal's gender " << endl;
+	std::cout << "4) Animal's age " << endl;
+	cout << "5) Animal's location found" << endl;
+	cout << "6) Animal's description " << endl << endl;
+
+	cout << "7) Animal's owner's name " << endl;
+	cout << "8) Animal's owner's surname " << endl;
+	cout << "9) Animal's owner's phone number " << endl;
+	cout << "10) Animal's owner's email address " << endl;
+	cout << "11) Animal's owner's description " << endl;
+	cin >> choice;
+	switch (choice) {
+	case 1:
+	{
+		string species;
+		cout << "Input the new species: ";
+		cin >> species;
+		personsAnimalV[0]->setSpecies(species);
+		break;
+	}
+	case 2:
+	{
+		string breed;
+		cout << "Input the new breed: ";
+		cin >> breed;
+		personsAnimalV[0]->setBreed(breed);
+		break;
+	}
+	case 3:
+	{
+		string gender;
+		cout << "Input the new gender: ";
+		cin >> gender;
+		personsAnimalV[0]->setGender(gender);
+		break;
+	}
+	case 4:
+	{
+		string age;
+		cout << "Input the new age: ";
+		cin >> age;
+		personsAnimalV[0]->setAge(age);
+		break;
+	}
+	case 5:
+	{
+		string location;
+		cout << "Input the new location: ";
+		cin >> location;
+		personsAnimalV[0]->setLocationFound(location);
+		break;
+	}
+	case 6:
+	{
+		string description;
+		cout << "Input the new description: ";
+		cin >> description;
+		personsAnimalV[0]->setAnimalDescription(description);
+		break;
+	}
+	case 7:
+	{
+		string name;
+		cout << "Input the new name: ";
+		cin >> name;
+		personsAnimalV[0]->setName(name);
+		break;
+	}
+	case 8:
+	{
+		string surname;
+		cout << "Input the new surname: ";
+		cin >> surname;
+		personsAnimalV[0]->setSurname(surname);
+		break;
+	}
+	case 9:
+	{
+		string phonenumber;
+		cout << "Input the new phone number: ";
+		cin >> phonenumber;
+		personsAnimalV[0]->setPhoneNumber(phonenumber);
+		break;
+	}
+	case 10:
+	{
+		string emailaddress;
+		cout << "Input the new email address: ";
+		cin >> emailaddress;
+		personsAnimalV[0]->setEmailAddress(emailaddress);
+		break;
+	}
+	case 11:
+	{
+		string persondescription;
+		cout << "Input the new person description: ";
+		cin >> persondescription;
+		personsAnimalV[0]->setPersonDescription(persondescription);
+		break;
+	}
+
+	}
+}
+
+/*void ShowAllAdvertisements() {
+	for (int i = 0; i < animalV.size(); i++) {
+		showInfos(animalV[i]);
+	}
+}*/
