@@ -16,9 +16,9 @@ Person::Person() {
 	emailAddress = "-Not known-";
 	personDescription = "-Not known-";
 
-	/*cout << "New person created." << endl;
+	cout << "New person created." << endl;
 	cout << "The person's id is: " << id << endl;
-	cout << "*****************************" << endl;*/
+	cout << "*****************************" << endl;
 }
 
 Animals::Animals() {
@@ -32,16 +32,16 @@ Animals::Animals() {
 
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
 	
-	//cout << "New animal created. (By " << id << ")" << endl << endl;
+	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
 
 Person::~Person() {
-	//cout << "Person " << id <<"  deleted." << endl << endl;
+	cout << "Person " << id <<"  deleted." << endl << endl;
 	usercounter--;
 }
 
 Animals::~Animals() {
-	//cout << "Animal deleted." << endl << endl;
+	cout << "Animal deleted." << "(" << id << ")" << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.

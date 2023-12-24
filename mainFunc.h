@@ -6,6 +6,7 @@
 #include <string>
 
 vector<Animals*> animalV;
+vector<Animals*> personsAnimalV;
 
 using namespace std;
 
@@ -96,9 +97,6 @@ void AddAdvertisement() {
 }
 
 void initialAnimals() {
-	/*Animals animal1;
-	Animals animal2;
-	Animals animal3;*/
 
 	Animals* animal1 = new Animals();
 	Animals* animal2 = new Animals();
@@ -131,4 +129,58 @@ void initialAnimals() {
 	animalV.push_back(animal1);
 	animalV.push_back(animal2);
 	animalV.push_back(animal3);
+}
+
+void mainScreen() {
+	cout << "Stray Animals Platform" << endl;
+	cout << "Please choose the operation:" << endl;
+	cout << "1.My advertisements" << endl; // add add,delete add ,fix add 3 alt dal
+	cout << "2.Show all advertisements." << endl;
+	cout << "3.Report an animal." << endl; // hayvan bildirme sebebi
+	cout << "4.Adopt an animal" << endl;    // sectýkten sonra barýnak ya da baþkasýndan diye iki secenek sunacak
+	cout << "5.Adopt my  animal." << endl;
+	cout << "6.Exit" << endl;
+}
+
+void idAuthentication(string user) {
+
+	for (int i = 0; i < animalV.size(); i++) {
+		if (user == animalV[i]->getId()) {
+			personsAnimalV.push_back(animalV[i]);
+		}
+	}
+}
+
+void myAdvertisements() {
+	string user;
+	cout << "Welcome to my advertisements." << endl;
+	cout << "Please write your user id: ";
+	cin >> user;
+	idAuthentication(user);
+	cout << "Please choose the operation:" << endl;
+	cout << "1.Add an advertisement." << endl;
+	cout << "2.Delete an advertisement." << endl;
+	cout << "3.Edit an advertisement." << endl;
+	cout << "4.Show my advertisements." << endl;
+	cout << "5.Return the main menu." << endl;
+}
+
+void showVectorInfos(vector<Animals*>* pV) {
+	for (int i = 0; i < pV->size(); i++) {
+		showInfos((*pV)[i]);
+	}
+}
+
+/*void ShowAllAdvertisements() {
+	for (int i = 0; i < animalV.size(); i++) {
+		showInfos(animalV[i]);
+	}
+}*/
+
+void DeleteAllAdvertisements() {
+	for (int i = 0; i < animalV.size(); i++) {
+		delete animalV[i];
+	}
+	animalV.clear();
+	personsAnimalV.clear();
 }
