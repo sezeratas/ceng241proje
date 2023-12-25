@@ -44,13 +44,14 @@ int main()
                     break;
                 case 3:
                     EditAdvertisements();
+                    returnToMainMenu = true;
                     break;
                 case 4:
                     showVectorInfos(&personsAnimalV);
+                    returnToMainMenu = true;
                     break;
                 case 5:
                     returnToMainMenu = true;
-                    // it will return to the main menu
                     break;
                 default:
                     std::cout << "Invalid choice. Please choose 1-5." << endl;

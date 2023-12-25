@@ -56,27 +56,28 @@ void AddAdvertisement() {
 	string personDescription;
 
 	//Animal class inputs
-	cout << "Input the animal's species: ";
+	cout << "Input the animal's species: " << endl;
 	getline(cin, species);
+	cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 	animal->setSpecies(species);
 
-	cout << "Input the animal's breed: ";
+	cout << "Input the animal's breed: " << endl;
 	getline(cin,breed);
 	animal->setBreed(breed);
 
-	cout << "Input the animal's gender: ";
+	cout << "Input the animal's gender: " << endl;
 	getline(cin, gender);
 	animal->setGender(gender);
 
-	cout << "Input the animal's age: ";
+	cout << "Input the animal's age:" << endl;
 	getline(cin, age);
 	animal->setAge(age);
 
-	cout << "Input the animal's location lost (or found): ";
+	cout << "Input the animal's location lost (or found): " << endl;
 	getline(cin, locationFound);
 	animal->setLocationFound(locationFound);
 
-	cout << "Input the animal's descrition: ";
+	cout << "Input the animal's descrition: " << endl;
 	getline(cin, animalDescription);
 	animal->setAnimalDescription(animalDescription);
 
@@ -152,7 +153,7 @@ void initialAnimals() {
 }
 
 void mainScreen() {
-	cout << "Stray Animals Platform" << endl;
+	cout << "****Welcome to Stray Animals Platform****" << endl;
 	cout << "Please choose the operation:" << endl;
 	cout << "1.My advertisements" << endl; // add add,delete add ,fix add 3 alt dal
 	cout << "2.Show all advertisements." << endl;
@@ -201,14 +202,13 @@ void DeleteAllAdvertisements() {
 
 void EditAdvertisements() {
 	int choice;
-	std::cout << "Select the information you want to change: " << endl;
-	std::cout << "1) Animal's species " << endl;
-	std::cout << "2) Animal's breed " << endl;
-	std::cout << "3) Animal's gender " << endl;
-	std::cout << "4) Animal's age " << endl;
+	cout << "Select the information you want to change: " << endl;
+	cout << "1) Animal's species " << endl;
+	cout << "2) Animal's breed " << endl;
+	cout << "3) Animal's gender " << endl;
+	cout << "4) Animal's age " << endl;
 	cout << "5) Animal's location found" << endl;
 	cout << "6) Animal's description " << endl << endl;
-
 	cout << "7) Animal's owner's name " << endl;
 	cout << "8) Animal's owner's surname " << endl;
 	cout << "9) Animal's owner's phone number " << endl;
