@@ -6,13 +6,10 @@ using namespace std;
 
 int main()
 {
-    //AddAdvertisement();
 
     initialAnimals();
 
     showVectorInfos(&personsAnimalV);
-
-    //AddAdvertisement();
 
     /*showInfos(animalV[0]);
     showInfos(animalV[1]);
