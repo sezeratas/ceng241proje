@@ -37,7 +37,7 @@ int main()
 
                 switch (firstchoice) {
                 case 1:
-                    AddAdvertisement();
+                    AddAnotherAdvertisement();
                     break;
                 case 2:
                     DeleteAdvertisement(personsAnimalV[0]->getId());

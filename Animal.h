@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include<iostream>
+#include<vector>
 using namespace std;
 
 // Person class is a subclass of Animal class.
@@ -16,7 +17,7 @@ protected:
 public:
     //Constructor and Destructor
     Person();
-    //Person(string id);  // Constructor overloading for person's multiple pet.
+    //Person(string id, string name, string phoneNumber, string emailAddress, string personDescription);
     ~Person();
 };
 
@@ -34,6 +35,7 @@ public:
 
     //Constructor and Destructor
     Animals();
+    Animals(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
     ~Animals();
 
     // Encapsulation for Animal class

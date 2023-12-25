@@ -1,5 +1,6 @@
 #include "Animal.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -21,15 +22,39 @@ Person::Person() {
 	cout << "*****************************" << endl;
 }
 
-/*Person::Person(string id) {
-	usercounter++;
+/*Person::Person(vector<Animals*>* pV) {
+	
+	id = (*pV)[0]->getId();
+	//this->id = id;
+
+	//this->name = name;
+	name = (*pV)[0]->getName();
+
+	//this->surname = surname;
+	surname = (*pV)[0]->getSurname();
+
+	//this->phoneNumber = phoneNumber;
+	phoneNumber = (*pV)[0]->getPhoneNumber();
+
+	//this->emailAddress = emailAddress;
+	emailAddress = (*pV)[0]->getEmailAddress();
+
+	//this->personDescription = personDescription;
+	personDescription = (*pV)[0]->getPersonDescription();
+
+	cout << "Person " << id << " updated." << endl;
+	cout << "*****************************" << endl;
+}*/
+
+/*Person::Person(string id, string name, string phoneNumber, string emailAddress, string personDescription) {
+
 	this->id = id;
 
-	name = "-Not known-";
-	surname = "-Not known-";
-	phoneNumber = "-Not known-";
-	emailAddress = "-Not known-";
-	personDescription = "-Not known-";
+	this->name = name;
+	this->surname = surname;
+	this->phoneNumber = phoneNumber;
+	this->emailAddress = emailAddress;
+	this->personDescription = personDescription;
 
 	cout << "Person " << id << " updated." << endl;
 	cout << "*****************************" << endl;
@@ -48,6 +73,35 @@ Animals::Animals() {
 	
 	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
+
+Animals::Animals(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) {
+
+	this->id = id;
+
+	this->name = name;
+	this->surname = surname;
+	this->phoneNumber = phoneNumber;
+	this->emailAddress = emailAddress;
+	this->personDescription = personDescription;
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+
+	cout << "New animal created. (By " << id << ")" << endl << endl;
+}
+
+/*Animals::Animals(vector<Animals*>* pV) {
+
+	species = "-Not known-";
+	breed = "-Not known-";
+	gender = "-Not known-";
+	age = "-Not known-";
+	locationFound = "-Not known-";
+	animalDescription = "-Not known-";
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+
+	cout << "New animal created. (By " << id << ")" << endl << endl;
+}*/
 
 Person::~Person() {
 	cout << "Person " << id <<"  deleted." << endl << endl;

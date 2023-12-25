@@ -108,6 +108,69 @@ void AddAdvertisement() {
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
 }
 
+void AddAnotherAdvertisement() {
+
+	string id = personsAnimalV[0]->getId();
+
+	string name = personsAnimalV[0]->getName();
+	string surname = personsAnimalV[0]->getSurname();
+	string phoneNumber = personsAnimalV[0]->getPhoneNumber();
+	string emailAddress = personsAnimalV[0]->getEmailAddress();
+	string personDescription = personsAnimalV[0]->getPersonDescription();
+
+	Animals* animal(id, name, surname, phoneNumber, emailAddress, personDescription) = new Animals;
+
+	//  Local variable to input
+	string species;
+	string breed;
+	string gender;
+	string age;
+	string locationFound;
+	string animalDescription;
+
+	//Animal class inputs
+	cout << "Input the animal's species: ";
+	getline(cin, species);
+	animal->setSpecies(species);
+
+	cout << "Input the animal's breed: ";
+	getline(cin, breed);
+	animal->setBreed(breed);
+
+	cout << "Input the animal's gender: ";
+	getline(cin, gender);
+	animal->setGender(gender);
+
+	cout << "Input the animal's age: ";
+	getline(cin, age);
+	animal->setAge(age);
+
+	cout << "Input the animal's location lost (or found): ";
+	getline(cin, locationFound);
+	animal->setLocationFound(locationFound);
+
+	cout << "Input the animal's descrition: ";
+	getline(cin, animalDescription);
+	animal->setAnimalDescription(animalDescription);
+
+	//Person class inputs
+	animal->setName(name);
+
+	animal->setSurname(surname);
+
+	animal->setPhoneNumber(phoneNumber);
+
+	animal->setEmailAddress(emailAddress);
+
+	animal->setPersonDescription(personDescription);
+
+	cout << "*****************************" << endl;
+
+	animalV.push_back(animal);
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+}
+
 void DeleteAdvertisement(string userid) {
 	idAuthentication(userid);
 	for (int i = 0; i < personsAnimalV.size(); i++) {
