@@ -4,7 +4,7 @@
 #include "Animal.h"
 #include <vector>
 #include <string>
-//deneme berk
+
 vector<Animals*> animalV;
 vector<Animals*> personsAnimalV;
 
@@ -118,7 +118,7 @@ void AddAnotherAdvertisement() {
 	string emailAddress = personsAnimalV[0]->getEmailAddress();
 	string personDescription = personsAnimalV[0]->getPersonDescription();
 
-	Animals* animal(id, name, surname, phoneNumber, emailAddress, personDescription) = new Animals;
+	Animals* animal = new Animals(id, name, surname, phoneNumber, emailAddress, personDescription);
 
 	//  Local variable to input
 	string species;
