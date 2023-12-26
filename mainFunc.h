@@ -13,6 +13,7 @@ using namespace std;
 //  Karisikligi onlemek ve okunabilirligi arttirmak icin.
 void showInfos(Animals* animal);
 void AddAdvertisement();
+void AddAnotherAdvertisement();
 void DeleteAdvertisement(string userid);
 void initialAnimals();
 void mainScreen();

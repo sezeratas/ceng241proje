@@ -17,7 +17,7 @@ protected:
 public:
     //Constructor and Destructor
     Person();
-    //Person(string id, string name, string phoneNumber, string emailAddress, string personDescription);
+    Person(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
     ~Person();
 };
 
