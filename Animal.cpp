@@ -7,7 +7,7 @@ using namespace std;
 int usercounter = 0;
 
 //Constructors and Destructors
-Person::Person() {
+PersonsInfo::PersonsInfo() {
 	usercounter++;
 	id = "@user" + to_string(usercounter);
 
@@ -22,7 +22,7 @@ Person::Person() {
 	cout << "*****************************" << endl;
 }
 
-Person::Person(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) {
+PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) {
 
 	this->id = id;
 
@@ -36,7 +36,7 @@ Person::Person(string id, string name, string surname, string phoneNumber, strin
 	cout << "*****************************" << endl;
 }
 
-Animals::Animals() {
+AnimalsInfo::AnimalsInfo() {
 
 	species = "-Not known-";
 	breed = "-Not known-";
@@ -50,8 +50,8 @@ Animals::Animals() {
 	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
 
-Animals::Animals(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) : 
-	Person(id, name, surname, phoneNumber, emailAddress, personDescription)
+AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) : 
+	PersonsInfo(id, name, surname, phoneNumber, emailAddress, personDescription)
 {
 
 	this->id = id;
@@ -67,61 +67,61 @@ Animals::Animals(string id, string name, string surname, string phoneNumber, str
 	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
 
-Person::~Person() {
+PersonsInfo::~PersonsInfo() {
 	cout << "Person " << id <<"  deleted." << endl << endl;
 	usercounter--;
 }
 
-Animals::~Animals() {
+AnimalsInfo::~AnimalsInfo() {
 	cout << "Animal deleted." << "(" << id << ")" << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.
-string Animals::getSpecies() {
+string AnimalsInfo::getSpecies() {
 	return species;
 }
-void Animals::setSpecies(string species) {
+void AnimalsInfo::setSpecies(string species) {
 	this->species = species;
 }
 
-string Animals::getBreed() {
+string AnimalsInfo::getBreed() {
 	return breed;
 }
-void Animals::setBreed(string breed) {
+void AnimalsInfo::setBreed(string breed) {
 	this->breed = breed;
 }
 
-string Animals::getGender() {
+string AnimalsInfo::getGender() {
 	return gender;
 }
-void Animals::setGender(string gender) {
+void AnimalsInfo::setGender(string gender) {
 	this->gender = gender;
 }
 
-string Animals::getAge() {
+string AnimalsInfo::getAge() {
 	return age;
 }
-void Animals::setAge(string age) {
+void AnimalsInfo::setAge(string age) {
 	this->age = age;
 }
 
-string Animals::getLocationFound() {
+string AnimalsInfo::getLocationFound() {
 	return locationFound;
 }
-void Animals::setLocationFound(string locationFound) {
+void AnimalsInfo::setLocationFound(string locationFound) {
 	this->locationFound = locationFound;
 }
 
-string Animals::getAnimalDescription() {
+string AnimalsInfo::getAnimalDescription() {
 	return animalDescription;
 }
-void Animals::setAnimalDescription(string description) {
+void AnimalsInfo::setAnimalDescription(string description) {
 	this->animalDescription = description;
 }
 
 //  Encapsulation for Person class variables.
 
-string Animals::getId() {
+string AnimalsInfo::getId() {
 	return id;
 }
 
@@ -130,37 +130,37 @@ void Animals::setId(int idNumber) {
 	id = "@user" + to_string(idNumber);
 }*/
 
-string Animals::getName() {
+string AnimalsInfo::getName() {
 	return name;
 }
-void Animals::setName(string name) {
+void AnimalsInfo::setName(string name) {
 	this->name = name;
 }
 
-string Animals::getSurname() {
+string AnimalsInfo::getSurname() {
 	return surname;
 }
-void Animals::setSurname(string surname) {
+void AnimalsInfo::setSurname(string surname) {
 	this->surname = surname;
 }
 
-string Animals::getPhoneNumber() {
+string AnimalsInfo::getPhoneNumber() {
 	return phoneNumber;
 }
-void Animals::setPhoneNumber(string phoneNumber) {
+void AnimalsInfo::setPhoneNumber(string phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 
-string Animals::getEmailAddress() {
+string AnimalsInfo::getEmailAddress() {
 	return emailAddress;
 }
-void Animals::setEmailAddress(string emailAddress) {
+void AnimalsInfo::setEmailAddress(string emailAddress) {
 	this->emailAddress = emailAddress;
 }
 
-string Animals::getPersonDescription() {
+string AnimalsInfo::getPersonDescription() {
 	return personDescription;
 }
-void Animals::setPersonDescription(string personDescription) {
+void AnimalsInfo::setPersonDescription(string personDescription) {
 	this->personDescription = personDescription;
 }

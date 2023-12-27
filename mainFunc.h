@@ -5,13 +5,13 @@
 #include <vector>
 #include <string>
 
-vector<Animals*> animalV;
-vector<Animals*> personsAnimalV;
+vector<AnimalsInfo*> animalV;
+vector<AnimalsInfo*> personsAnimalV;
 
 using namespace std;
 
 //  Karisikligi onlemek ve okunabilirligi arttirmak icin.
-void showInfos(Animals* animal);
+void showInfos(AnimalsInfo* animal);
 void AddAdvertisement();
 void AddAnotherAdvertisement();
 void DeleteAdvertisement(string userid);
@@ -19,11 +19,11 @@ void initialAnimals();
 void mainScreen();
 void idAuthentication(string user);
 void myAdvertisements();
-void showVectorInfos(vector<Animals*>* pV);
+void showVectorInfos(vector<AnimalsInfo*>* pV);
 void DeleteAllAdvertisements();
 void EditAdvertisements();
 
-void showInfos(Animals* animal) {
+void showInfos(AnimalsInfo* animal) {
 	cout << "Animal's species: " << animal->getSpecies() << endl;
 	cout << "Animal's breed: " << animal->getBreed() << endl;
 	cout << "Animal's gender: " << animal->getGender() << endl;
@@ -41,7 +41,7 @@ void showInfos(Animals* animal) {
 
 void AddAdvertisement() {
 
-	Animals* animal = new Animals();
+	AnimalsInfo* animal = new AnimalsInfo();
 
 	//  Local variable to input
 	string species;
@@ -119,7 +119,7 @@ void AddAnotherAdvertisement() {
 	string emailAddress = personsAnimalV[0]->getEmailAddress();
 	string personDescription = personsAnimalV[0]->getPersonDescription();
 
-	Animals* animal = new Animals(id, name, surname, phoneNumber, emailAddress, personDescription);
+	AnimalsInfo* animal = new AnimalsInfo(id, name, surname, phoneNumber, emailAddress, personDescription);
 
 	//  Local variable to input
 	string species;
@@ -169,6 +169,8 @@ void AddAnotherAdvertisement() {
 
 	animalV.push_back(animal);
 
+	cout << "Your changes will save after logout." << endl << endl;
+
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
 }
 
@@ -182,9 +184,9 @@ void DeleteAdvertisement(string userid) {
 
 void initialAnimals() {
 
-	Animals* animal1 = new Animals();
-	Animals* animal2 = new Animals();
-	Animals* animal3 = new Animals();
+	AnimalsInfo* animal1 = new AnimalsInfo();
+	AnimalsInfo* animal2 = new AnimalsInfo();
+	AnimalsInfo* animal3 = new AnimalsInfo();
 
 	animal1->setSpecies("Dog");
 	animal1->setBreed("Golden");
@@ -244,7 +246,7 @@ void myAdvertisements() {
 	cout << "5.Return the main menu." << endl;
 }
 
-void showVectorInfos(vector<Animals*>* pV) {
+void showVectorInfos(vector<AnimalsInfo*>* pV) {
 	for (int i = 0; i < pV->size(); i++) {
 		showInfos((*pV)[i]);
 	}
