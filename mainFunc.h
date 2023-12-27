@@ -7,20 +7,25 @@
 
 vector<Animals*> animalV;
 vector<Animals*> personsAnimalV;
+vector<Animals*> adoptanimalV;
 
 using namespace std;
 
 //  Karisikligi onlemek ve okunabilirligi arttirmak icin.
 void showInfos(Animals* animal);
+void showInfosForAdopts(Animals* animal);
 void AddAdvertisement();
+void AddAnotherAdvertisement();
 void DeleteAdvertisement(string userid);
 void initialAnimals();
 void mainScreen();
 void idAuthentication(string user);
 void myAdvertisements();
 void showVectorInfos(vector<Animals*>* pV);
+void showVectorInfosForAdopts(vector<Animals*>* animal);
 void DeleteAllAdvertisements();
 void EditAdvertisements();
+void adoptAnimals();
 
 void showInfos(Animals* animal) {
 	cout << "Animal's species: " << animal->getSpecies() << endl;
@@ -57,27 +62,27 @@ void AddAdvertisement() {
 
 	//Animal class inputs
 	cout << "Input the animal's species: " << endl;
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	getline(cin, species);
-	cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 	animal->setSpecies(species);
 
 	cout << "Input the animal's breed: " << endl;
-	getline(cin,breed);
+	getline(cin, breed);
 	animal->setBreed(breed);
 
-	cout << "Input the animal's gender: " << endl;
+	cout << "Input the animal's gender: ";
 	getline(cin, gender);
 	animal->setGender(gender);
 
-	cout << "Input the animal's age:" << endl;
+	cout << "Input the animal's age: ";
 	getline(cin, age);
 	animal->setAge(age);
 
-	cout << "Input the animal's location lost (or found): " << endl;
+	cout << "Input the animal's location lost (or found): ";
 	getline(cin, locationFound);
 	animal->setLocationFound(locationFound);
 
-	cout << "Input the animal's descrition: " << endl;
+	cout << "Input the animal's descrition: ";
 	getline(cin, animalDescription);
 	animal->setAnimalDescription(animalDescription);
 
@@ -103,7 +108,71 @@ void AddAdvertisement() {
 	animal->setPersonDescription(personDescription);
 
 	cout << "*****************************" << endl;
-	
+
+	animalV.push_back(animal);
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+}
+
+void AddAnotherAdvertisement() {
+
+	string id = personsAnimalV[0]->getId();
+
+	string name = personsAnimalV[0]->getName();
+	string surname = personsAnimalV[0]->getSurname();
+	string phoneNumber = personsAnimalV[0]->getPhoneNumber();
+	string emailAddress = personsAnimalV[0]->getEmailAddress();
+	string personDescription = personsAnimalV[0]->getPersonDescription();
+
+	Animals* animal = new Animals(id, name, surname, phoneNumber, emailAddress, personDescription);
+
+	//  Local variable to input
+	string species;
+	string breed;
+	string gender;
+	string age;
+	string locationFound;
+	string animalDescription;
+
+	//Animal class inputs
+	cout << "Input the animal's species: ";
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	getline(cin, species);
+	animal->setSpecies(species);
+
+	cout << "Input the animal's breed: ";
+	getline(cin, breed);
+	animal->setBreed(breed);
+
+	cout << "Input the animal's gender: ";
+	getline(cin, gender);
+	animal->setGender(gender);
+
+	cout << "Input the animal's age: ";
+	getline(cin, age);
+	animal->setAge(age);
+
+	cout << "Input the animal's location lost (or found): ";
+	getline(cin, locationFound);
+	animal->setLocationFound(locationFound);
+
+	cout << "Input the animal's descrition: ";
+	getline(cin, animalDescription);
+	animal->setAnimalDescription(animalDescription);
+
+	//Person class inputs
+	animal->setName(name);
+
+	animal->setSurname(surname);
+
+	animal->setPhoneNumber(phoneNumber);
+
+	animal->setEmailAddress(emailAddress);
+
+	animal->setPersonDescription(personDescription);
+
+	cout << "*****************************" << endl;
+
 	animalV.push_back(animal);
 
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
@@ -111,7 +180,7 @@ void AddAdvertisement() {
 
 void DeleteAdvertisement(string userid) {
 	idAuthentication(userid);
-	for (int i = 0; i < personsAnimalV.size(); i++) {
+	for (int i = 0; i < personsAnimalV.size(); i++) { //animalV.size olacak
 		delete personsAnimalV[i];
 	}
 	personsAnimalV.clear();
@@ -153,7 +222,7 @@ void initialAnimals() {
 }
 
 void mainScreen() {
-	cout << "****Welcome to Stray Animals Platform****" << endl;
+	cout << "Stray Animals Platform" << endl;
 	cout << "Please choose the operation:" << endl;
 	cout << "1.My advertisements" << endl; // add add,delete add ,fix add 3 alt dal
 	cout << "2.Show all advertisements." << endl;
@@ -173,11 +242,6 @@ void idAuthentication(string user) {
 }
 
 void myAdvertisements() {
-	string user;
-	cout << "Welcome to my advertisements." << endl;
-	cout << "Please write your user id: ";
-	cin >> user;
-	idAuthentication(user);
 	cout << "Please choose the operation:" << endl;
 	cout << "1.Add an advertisement." << endl;
 	cout << "2.Delete an advertisement." << endl;
@@ -191,6 +255,7 @@ void showVectorInfos(vector<Animals*>* pV) {
 		showInfos((*pV)[i]);
 	}
 }
+
 
 void DeleteAllAdvertisements() {
 	for (int i = 0; i < animalV.size(); i++) {
@@ -209,6 +274,7 @@ void EditAdvertisements() {
 	cout << "4) Animal's age " << endl;
 	cout << "5) Animal's location found" << endl;
 	cout << "6) Animal's description " << endl << endl;
+
 	cout << "7) Animal's owner's name " << endl;
 	cout << "8) Animal's owner's surname " << endl;
 	cout << "9) Animal's owner's phone number " << endl;
@@ -313,3 +379,176 @@ void EditAdvertisements() {
 		showInfos(animalV[i]);
 	}
 }*/
+void adoptmyanimal() {
+	Animals* adoptanimal = new Animals();
+
+	//  Local variable to input
+	string species;
+	string breed;
+	string gender;
+	string age;
+	string locationFound;
+	string animalDescription;
+	string name;
+	string surname;
+	string phoneNumber;
+	string emailAddress;
+	string personDescription;
+
+	//Animal class inputs
+	cout << "My animal's species: " << endl;
+	getline(cin, species);
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	adoptanimal->setSpecies(species);
+
+	cout << "My animal's breed: " << endl;
+	getline(cin, breed);
+	adoptanimal->setBreed(breed);
+
+	cout << "My animal's gender: " << endl;
+	getline(cin, gender);
+	adoptanimal->setGender(gender);
+
+	cout << "My animal's age:" << endl;
+	getline(cin, age);
+	adoptanimal->setAge(age);
+
+	cout << "My animal's location: " << endl;
+	getline(cin, locationFound);
+	adoptanimal->setLocationFound(locationFound);
+
+	cout << "My animal's description and reason why I want adopt my animal: " << endl;
+	getline(cin, animalDescription);
+	adoptanimal->setAnimalDescription(animalDescription);
+
+	//Person class inputs
+	cout << endl << "My name: ";
+	getline(cin, name);
+	adoptanimal->setName(name);
+
+	cout << "My surname: ";
+	getline(cin, surname);
+	adoptanimal->setSurname(surname);
+
+	cout << "My phone number: ";
+	getline(cin, phoneNumber);
+	adoptanimal->setPhoneNumber(phoneNumber);
+
+	cout << "My email address: ";
+	getline(cin, emailAddress);
+	adoptanimal->setEmailAddress(emailAddress);
+
+	cout << "My description: ";
+	getline(cin, personDescription);
+	adoptanimal->setPersonDescription(personDescription);
+	cout << "*****************************" << endl;
+
+	animalV.push_back(adoptanimal);
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+}
+void adoptAnimals() {//barýnaktan sahiplenilmesi icin
+
+	Animals* adoptanimal1 = new Animals();
+	Animals* adoptanimal2 = new Animals();
+	Animals* adoptanimal3 = new Animals();
+
+	adoptanimal1->setSpecies("Köpke");
+	adoptanimal1->setBreed("Rýfký");
+	adoptanimal1->setGender("Erkek");
+	adoptanimal1->setAge("12 years old.");
+	adoptanimal1->setLocationFound("Herhangi bri yer");
+	adoptanimal1->setAnimalDescription("white and small");
+	adoptanimal1->setName("Maraz");
+	adoptanimal1->setSurname("Ali");
+	adoptanimal1->setPhoneNumber("0000000000000 000 ");
+	adoptanimal1->setEmailAddress("asdad@gmail.com");
+	adoptanimal1->setPersonDescription("inan bilmiyorum");
+
+	adoptanimal2->setSpecies("kuþ");
+	adoptanimal2->setBreed("Tontik");
+	adoptanimal2->setGender("Female");
+	adoptanimal2->setAge("9 months old.");
+	adoptanimal2->setLocationFound("Ankara");
+	adoptanimal2->setAnimalDescription("Blue eyes.");
+	adoptanimal2->setName("Fatih");
+	adoptanimal2->setSurname("Terim");
+	adoptanimal2->setPhoneNumber("666 666666");
+	adoptanimal2->setEmailAddress("fssaf@gmail.com");
+	adoptanimal2->setPersonDescription("inan simdi biliyorum");
+
+	animalV.push_back(adoptanimal1);
+	animalV.push_back(adoptanimal2);
+	animalV.push_back(adoptanimal3);
+}
+void AddAnotherAdoptAdvertisement() {
+
+	string id = personsAnimalV[0]->getId();
+
+	string name = personsAnimalV[0]->getName();
+	string surname = personsAnimalV[0]->getSurname();
+	string phoneNumber = personsAnimalV[0]->getPhoneNumber();
+	string emailAddress = personsAnimalV[0]->getEmailAddress();
+	string personDescription = personsAnimalV[0]->getPersonDescription();
+
+	Animals* adoptanimal = new Animals(id, name, surname, phoneNumber, emailAddress, personDescription);
+
+	//  Local variable to input
+	string species;
+	string breed;
+	string gender;
+	string age;
+	string locationFound;
+	string animalDescription;
+
+	//Animal class inputs
+	cout << "My animal's species: " << endl;
+	getline(cin, species);
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	adoptanimal->setSpecies(species);
+
+	cout << "My animal's breed: " << endl;
+	getline(cin, breed);
+	adoptanimal->setBreed(breed);
+
+	cout << "My animal's gender: " << endl;
+	getline(cin, gender);
+	adoptanimal->setGender(gender);
+
+	cout << "My animal's age:" << endl;
+	getline(cin, age);
+	adoptanimal->setAge(age);
+
+	cout << "My animal's location: " << endl;
+	getline(cin, locationFound);
+	adoptanimal->setLocationFound(locationFound);
+
+	cout << "My animal's description and reason why I want adopt my animal: " << endl;
+	getline(cin, animalDescription);
+	adoptanimal->setAnimalDescription(animalDescription);
+
+	//Person class inputs
+	adoptanimal->setName(name);
+
+	adoptanimal->setSurname(surname);
+
+	adoptanimal->setPhoneNumber(phoneNumber);
+
+	adoptanimal->setEmailAddress(emailAddress);
+
+	adoptanimal->setPersonDescription(personDescription);
+
+	cout << "*****************************" << endl;
+
+	animalV.push_back(adoptanimal);
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+}
+void showVectorInfosForAdopts(vector<Animals*>* pV) {
+	for (int i = 0; i < pV->size(); i++) {
+		showInfosForAdopts((*pV)[i]);
+	}
+}
+void fromshelter() {
+	showInfosForAdopts(&adoptanimalV);
+}

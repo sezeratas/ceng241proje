@@ -1,5 +1,6 @@
 #include "Animal.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -21,19 +22,19 @@ Person::Person() {
 	cout << "*****************************" << endl;
 }
 
-/*Person::Person(string id) {
-	usercounter++;
+Person::Person(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) {
+
 	this->id = id;
 
-	name = "-Not known-";
-	surname = "-Not known-";
-	phoneNumber = "-Not known-";
-	emailAddress = "-Not known-";
-	personDescription = "-Not known-";
+	this->name = name;
+	this->surname = surname;
+	this->phoneNumber = phoneNumber;
+	this->emailAddress = emailAddress;
+	this->personDescription = personDescription;
 
 	cout << "Person " << id << " updated." << endl;
 	cout << "*****************************" << endl;
-}*/
+}
 
 Animals::Animals() {
 
@@ -45,12 +46,29 @@ Animals::Animals() {
 	animalDescription = "-Not known-";
 
 	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
-	
+
+	cout << "New animal created. (By " << id << ")" << endl << endl;
+}
+
+Animals::Animals(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) :
+	Person(id, name, surname, phoneNumber, emailAddress, personDescription)
+{
+
+	this->id = id;
+
+	this->name = name;
+	this->surname = surname;
+	this->phoneNumber = phoneNumber;
+	this->emailAddress = emailAddress;
+	this->personDescription = personDescription;
+
+	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+
 	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
 
 Person::~Person() {
-	cout << "Person " << id <<"  deleted." << endl << endl;
+	cout << "Person " << id << "  deleted." << endl << endl;
 	usercounter--;
 }
 
@@ -145,4 +163,4 @@ string Animals::getPersonDescription() {
 }
 void Animals::setPersonDescription(string personDescription) {
 	this->personDescription = personDescription;
-}
+} Animal.cpp

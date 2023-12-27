@@ -6,19 +6,12 @@ using namespace std;
 
 int main()
 {
-    //AddAdvertisement();
 
     initialAnimals();
 
     showVectorInfos(&personsAnimalV);
 
-    //AddAdvertisement();
-
-    /*showInfos(animalV[0]);
-    showInfos(animalV[1]);
-    showInfos(animalV[2]);
-    showInfos(animalV[3]);
-    showInfos(animalV[4]);*/
+    //showInfos(animalV[0]);   //show infos fonksiyonuyla istediginiz bir ilanin guncel durumuna bakabilirsiniz.
 
     int mainchoice;
     do {
@@ -31,27 +24,32 @@ int main()
             int firstchoice;
             bool returnToMainMenu = false;
 
+            string user;
+            cout << "Welcome to my advertisements." << endl;
+            cout << "Please write your user id: ";
+            cin >> user;
+            idAuthentication(user);
+
             do {
                 myAdvertisements();
                 cin >> firstchoice;
 
                 switch (firstchoice) {
                 case 1:
-                    AddAdvertisement();
+                    AddAnotherAdvertisement();
                     break;
                 case 2:
                     DeleteAdvertisement(personsAnimalV[0]->getId());
                     break;
                 case 3:
                     EditAdvertisements();
-                    returnToMainMenu = true;
                     break;
                 case 4:
                     showVectorInfos(&personsAnimalV);
-                    returnToMainMenu = true;
                     break;
                 case 5:
                     returnToMainMenu = true;
+                    // it will return to the main menu
                     break;
                 default:
                     std::cout << "Invalid choice. Please choose 1-5." << endl;
@@ -77,7 +75,7 @@ int main()
 
                 switch (fourthchoice) {
                 case 1:
-                    // fromshelter();
+                    fromshelter();
                     break;
                 case 2:
                     // fromsomeone();
@@ -90,10 +88,10 @@ int main()
                     cout << "Invalid choice. Please choose 1-3." << endl;
                 }
             } while (!returnToMainMenu);
-                break;
+            break;
         }
         case 5:
-            // adoptmyanimal();
+            adoptmyanimal();
             break;
         case 6:
             return 1;
