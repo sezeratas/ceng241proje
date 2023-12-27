@@ -236,11 +236,6 @@ void idAuthentication(string user) {
 }
 
 void myAdvertisements() {
-	string user;
-	cout << "Welcome to my advertisements." << endl;
-	cout << "Please write your user id: ";
-	cin >> user;
-	idAuthentication(user);
 	cout << "Please choose the operation:" << endl;
 	cout << "1.Add an advertisement." << endl;
 	cout << "2.Delete an advertisement." << endl;

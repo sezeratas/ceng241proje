@@ -11,11 +11,7 @@ int main()
 
     showVectorInfos(&personsAnimalV);
 
-    /*showInfos(animalV[0]);
-    showInfos(animalV[1]);
-    showInfos(animalV[2]);
-    showInfos(animalV[3]);
-    showInfos(animalV[4]);*/
+    //showInfos(animalV[0]);   //show infos fonksiyonuyla istediginiz bir ilanin guncel durumuna bakabilirsiniz.
 
     int mainchoice;
     do {
@@ -27,6 +23,12 @@ int main()
         case 1: {
             int firstchoice;
             bool returnToMainMenu = false;
+
+            string user;
+            cout << "Welcome to my advertisements." << endl;
+            cout << "Please write your user id: ";
+            cin >> user;
+            idAuthentication(user);
 
             do {
                 myAdvertisements();
