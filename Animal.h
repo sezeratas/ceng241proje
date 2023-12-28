@@ -30,7 +30,8 @@ private:
     string age;
     string locationFound;
     string animalDescription;
-    string animalCode;  // L: Lost animal, R: Report animal, A: Adopt animal 
+
+    string animalStatus;
 
     int animalC;
 public:
@@ -43,9 +44,6 @@ public:
     // Encapsulation for Animal class
     int getAnimalC();
     //void setAnimalC(string animalnumber);
-
-    string getAnimalCode();
-    void setAnimalCode(string animalStatus);
 
     string getSpecies();
     void setSpecies(string species);
@@ -64,6 +62,9 @@ public:
 
     string getAnimalDescription();
     void setAnimalDescription(string animalDescription);
+
+    string getAnimalStatus();
+    void setAnimalStatus(string animalStatus);
 
     // Encapsulation for Person class
 

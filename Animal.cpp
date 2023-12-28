@@ -46,7 +46,7 @@ AnimalsInfo::AnimalsInfo() {
 	locationFound = "-Not known-";
 	animalDescription = "-Not known-";
 
-	animalCode = locationFound + "/" + species + "/" + breed; + "/" + to_string(animalcounter) + "/";   // Ankara/Dog/Golden/4/L
+	animalStatus = "-Not known-";
 
 	animalC = animalcounter;
 	
@@ -64,8 +64,6 @@ AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNum
 	this->phoneNumber = phoneNumber;
 	this->emailAddress = emailAddress;
 	this->personDescription = personDescription;
-
-	animalCode = locationFound + "/" + species + "/" + breed; +"/" + to_string(animalcounter) + "/";  // Ankara/Dog/Golden/5/A
 
 	animalC = animalcounter;
 
@@ -90,13 +88,6 @@ int AnimalsInfo::getAnimalC() {
 /*void AnimalsInfo::setAnimalCode(string animalnum) {
 	animalC += animalnum;
 }*/
-
-string AnimalsInfo::getAnimalCode() {
-	return animalCode;
-}
-void AnimalsInfo::setAnimalCode(string animalStatus) {
-	animalCode += animalStatus;
-}
 
 string AnimalsInfo::getSpecies() {
 	return species;
@@ -138,6 +129,13 @@ string AnimalsInfo::getAnimalDescription() {
 }
 void AnimalsInfo::setAnimalDescription(string description) {
 	this->animalDescription = description;
+}
+
+string AnimalsInfo::getAnimalStatus() {
+	return animalStatus;
+}
+void AnimalsInfo::setAnimalStatus(string animalStatus) {
+	this->animalStatus = animalStatus;
 }
 
 //  Encapsulation for Person class variables.

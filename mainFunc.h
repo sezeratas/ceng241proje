@@ -12,16 +12,31 @@ using namespace std;
 
 //  Karisikligi onlemek ve okunabilirligi arttirmak icin.
 void showInfos(AnimalsInfo* animal);
-void AddAdvertisement();
-void AddAnotherAdvertisement();
+void AddAdvertisement(string animalStatus);
+void AddAnotherAdvertisement(string animalStatus);
 void DeleteAdvertisement(string userid);
 void initialAnimals();
 void mainScreen();
 void idAuthentication(string user);
 void myAdvertisements();
-void showVectorInfos(vector<AnimalsInfo*>* pV);
+void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus);
 void DeleteAllAdvertisements();
 void EditAdvertisements();
+void AddAdvertisementsWithStatus();
+
+void AddAdvertisementsWithStatus() {
+	int chcnum;
+	cout << "Which reports do you want to add: " << endl;
+	cout << "1) My lost pet report." << endl;
+	cout << "2) Potential lost pet report." << endl;
+	cin >> chcnum;
+	if (chcnum == 1) {
+		AddAdvertisement("UsersLostAnimal");
+	}
+	else if (chcnum == 2) {
+		AddAdvertisement("PotentialLostAnimal");
+	}
+}
 
 void showInfos(AnimalsInfo* animal) {
 	cout << "Animal's species: " << animal->getSpecies() << endl;
@@ -30,6 +45,7 @@ void showInfos(AnimalsInfo* animal) {
 	cout << "Animal's age: " << animal->getAge() << endl;
 	cout << "Animal's location: " << animal->getLocationFound() << endl;
 	cout << "Animal's description: " << animal->getAnimalDescription() << endl << endl;
+	cout << "Animal's status: " << animal->getAnimalStatus() << endl << endl;
 
 	cout << "Animal's owner's name: " << animal->getName() << endl;
 	cout << "Animal's owner's surname: " << animal->getSurname() << endl;
@@ -39,7 +55,7 @@ void showInfos(AnimalsInfo* animal) {
 	cout << "***********************************" << endl << endl;
 }
 
-void AddAdvertisement() {
+void AddAdvertisement(string animalStatus) {
 
 	AnimalsInfo* animal = new AnimalsInfo();
 
@@ -102,14 +118,19 @@ void AddAdvertisement() {
 	getline(cin, personDescription);
 	animal->setPersonDescription(personDescription);
 
+	if (animalStatus == "UsersLostAnimal") {
+		animal->setAnimalStatus("UsersLostAnimal");
+	}
+	else if (animalStatus == "PotentialLostAnimal") {
+		animal->setAnimalStatus("PotentialLostAnimal");
+	}
+
 	cout << "*****************************" << endl;
 	
 	animalV.push_back(animal);
-
-	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
 }
 
-void AddAnotherAdvertisement() {
+void AddAnotherAdvertisement(string animalStatus) {
 
 	string id = personsAnimalV[0]->getId();
 
@@ -120,6 +141,8 @@ void AddAnotherAdvertisement() {
 	string personDescription = personsAnimalV[0]->getPersonDescription();
 
 	AnimalsInfo* animal = new AnimalsInfo(id, name, surname, phoneNumber, emailAddress, personDescription);
+
+	personsAnimalV.erase(personsAnimalV.begin());
 
 	//  Local variable to input
 	string species;
@@ -165,13 +188,18 @@ void AddAnotherAdvertisement() {
 
 	animal->setPersonDescription(personDescription);
 
+	if (animalStatus == "UsersLostAnimal") {
+		animal->setAnimalStatus("UsersLostAnimal");
+	}
+	else if (animalStatus == "PotentialLostAnimal") {
+		animal->setAnimalStatus("PotentialLostAnimal");
+	}
+
 	cout << "*****************************" << endl;
 
 	animalV.push_back(animal);
 
 	cout << "Your changes will save after logout." << endl << endl;
-
-	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
 }
 
 void DeleteAdvertisement(string userid) {
@@ -196,12 +224,12 @@ void initialAnimals() {
 	animal1->setAge("2 years old.");
 	animal1->setLocationFound("Cankaya Uni");
 	animal1->setAnimalDescription("The red collar");
+	animal1->setAnimalStatus("UsersLostAnimal");
 	animal1->setName("Sezer");
 	animal1->setSurname("Atas");
 	animal1->setPhoneNumber("0534 11111");
 	animal1->setEmailAddress("aaaaaa@gmail.com");
 	animal1->setPersonDescription("inan bilmiyorum");
-	animal1->setAnimalCode("R");
 
 	animal2->setSpecies("Cat");
 	animal2->setBreed("Tekir");
@@ -209,12 +237,12 @@ void initialAnimals() {
 	animal2->setAge("5 months old.");
 	animal2->setLocationFound("Koru");
 	animal2->setAnimalDescription("Blue eyes.");
+	animal2->setAnimalStatus("UsersLostAnimal");
 	animal2->setName("Yusuf");
 	animal2->setSurname("Ozcan");
 	animal2->setPhoneNumber("0535 666666");
 	animal2->setEmailAddress("yyyyyyy@gmail.com");
 	animal2->setPersonDescription("inan simdi biliyorum");
-	animal2->setAnimalCode("R");
 
 	animalV.push_back(animal1);
 	animalV.push_back(animal2);
@@ -226,10 +254,23 @@ void mainScreen() {
 	cout << "Please choose the operation:" << endl;
 	cout << "1.My advertisements" << endl; // add add,delete add ,fix add 3 alt dal
 	cout << "2.Show all advertisements." << endl;
-	cout << "3.Report an animal." << endl; // hayvan bildirme sebebi
-	cout << "4.Adopt an animal" << endl;    // sectýkten sonra barýnak ya da baþkasýndan diye iki secenek sunacak
-	cout << "5.Adopt my  animal." << endl;
-	cout << "6.Exit" << endl;
+	cout << "3.New user." << endl; // hayvan bildirme sebebi
+	//cout << "4.Adopt an animal" << endl;    // sectýkten sonra barýnak ya da baþkasýndan diye iki secenek sunacak
+	//cout << "5.Adopt my  animal." << endl;
+	cout << "4.Exit" << endl;
+}
+
+void myAdvertisements() {
+	cout << "Please choose the operation:" << endl;
+	cout << "1.Add a user's lost pet reports." << endl;
+	cout << "2.Delete a user's lost pet reports." << endl;
+	cout << "3.Edit a user's lost pet reports." << endl;
+	cout << "4.Show my lost animal reports." << endl << endl;
+	cout << "5.Add a potantial lost pet reports." << endl;
+	cout << "6.Delete a potential lost pet reports." << endl;
+	cout << "7.Edit a potential lost pet reports." << endl;
+	cout << "8.Show my potential lost pet reports." << endl;
+	cout << "9.Return the main menu." << endl;
 }
 
 void idAuthentication(string user) {
@@ -241,18 +282,19 @@ void idAuthentication(string user) {
 	}
 }
 
-void myAdvertisements() {
-	cout << "Please choose the operation:" << endl;
-	cout << "1.Add an advertisement." << endl;
-	cout << "2.Delete an advertisement." << endl;
-	cout << "3.Edit an advertisement." << endl;
-	cout << "4.Show my advertisements." << endl;
-	cout << "5.Return the main menu." << endl;
+void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus) {
+	for (int i = 0; i < pV->size(); i++) {
+		if ((*pV)[i]->getAnimalStatus() == "UsersLostAnimal") {
+			showInfos((*pV)[i]);
+		}
+		else if ((*pV)[i]->getAnimalStatus() == "PotentialLostAnimal") {
+			showInfos((*pV)[i]);
+		}	
+	}
 }
-
 void showVectorInfos(vector<AnimalsInfo*>* pV) {
 	for (int i = 0; i < pV->size(); i++) {
-		showInfos((*pV)[i]);
+			showInfos((*pV)[i]);
 	}
 }
 
