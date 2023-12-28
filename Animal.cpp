@@ -5,6 +5,7 @@
 using namespace std;
 
 int usercounter = 0;
+int animalcounter = 0;
 
 //Constructors and Destructors
 PersonsInfo::PersonsInfo() {
@@ -37,7 +38,7 @@ PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNum
 }
 
 AnimalsInfo::AnimalsInfo() {
-
+	animalcounter += 1;
 	species = "-Not known-";
 	breed = "-Not known-";
 	gender = "-Not known-";
@@ -45,7 +46,9 @@ AnimalsInfo::AnimalsInfo() {
 	locationFound = "-Not known-";
 	animalDescription = "-Not known-";
 
-	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+	animalCode = locationFound + "/" + species + "/" + breed; + "/" + to_string(animalcounter) + "/";   // Ankara/Dog/Golden/4/L
+
+	animalC = animalcounter;
 	
 	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
@@ -62,7 +65,9 @@ AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNum
 	this->emailAddress = emailAddress;
 	this->personDescription = personDescription;
 
-	//animalCode = locationFound + "/" + species + "/" + breed; //+ "/" + animalcounter;
+	animalCode = locationFound + "/" + species + "/" + breed; +"/" + to_string(animalcounter) + "/";  // Ankara/Dog/Golden/5/A
+
+	animalC = animalcounter;
 
 	cout << "New animal created. (By " << id << ")" << endl << endl;
 }
@@ -73,10 +78,26 @@ PersonsInfo::~PersonsInfo() {
 }
 
 AnimalsInfo::~AnimalsInfo() {
+	animalcounter --;
 	cout << "Animal deleted." << "(" << id << ")" << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.
+
+int AnimalsInfo::getAnimalC() {
+	return animalC;
+}
+/*void AnimalsInfo::setAnimalCode(string animalnum) {
+	animalC += animalnum;
+}*/
+
+string AnimalsInfo::getAnimalCode() {
+	return animalCode;
+}
+void AnimalsInfo::setAnimalCode(string animalStatus) {
+	animalCode += animalStatus;
+}
+
 string AnimalsInfo::getSpecies() {
 	return species;
 }

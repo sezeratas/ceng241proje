@@ -30,7 +30,9 @@ private:
     string age;
     string locationFound;
     string animalDescription;
-    //string animalCode;
+    string animalCode;  // L: Lost animal, R: Report animal, A: Adopt animal 
+
+    int animalC;
 public:
 
     //Constructor and Destructor
@@ -39,6 +41,12 @@ public:
     ~AnimalsInfo();
 
     // Encapsulation for Animal class
+    int getAnimalC();
+    //void setAnimalC(string animalnumber);
+
+    string getAnimalCode();
+    void setAnimalCode(string animalStatus);
+
     string getSpecies();
     void setSpecies(string species);
 

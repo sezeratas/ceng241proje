@@ -176,10 +176,12 @@ void AddAnotherAdvertisement() {
 
 void DeleteAdvertisement(string userid) {
 	idAuthentication(userid);
-	for (int i = 0; i < personsAnimalV.size(); i++) {
-		delete personsAnimalV[i];
-	}
-	personsAnimalV.clear();
+	int num;
+	cout << "Input the item: ";
+	cin >> num;
+	delete personsAnimalV[num];
+	personsAnimalV.erase(personsAnimalV.begin()+num);
+	animalV.erase(animalV.begin() + (personsAnimalV[num]->getAnimalC()));
 }
 
 void initialAnimals() {
@@ -199,6 +201,7 @@ void initialAnimals() {
 	animal1->setPhoneNumber("0534 11111");
 	animal1->setEmailAddress("aaaaaa@gmail.com");
 	animal1->setPersonDescription("inan bilmiyorum");
+	animal1->setAnimalCode("R");
 
 	animal2->setSpecies("Cat");
 	animal2->setBreed("Tekir");
@@ -211,6 +214,7 @@ void initialAnimals() {
 	animal2->setPhoneNumber("0535 666666");
 	animal2->setEmailAddress("yyyyyyy@gmail.com");
 	animal2->setPersonDescription("inan simdi biliyorum");
+	animal2->setAnimalCode("R");
 
 	animalV.push_back(animal1);
 	animalV.push_back(animal2);
