@@ -8,10 +8,9 @@ int main()
 {
 
     initialAnimals();
-
     showVectorInfos(&personsAnimalV);
 
-    //showInfos(animalV[0]);   //show infos fonksiyonuyla istediginiz bir ilanin guncel durumuna bakabilirsiniz.
+    //showInfos(animalV[0]);   //show infos fonksiyonuyla istediginiz bir ilanin guncel durumuna bakabilirsiniz.4
 
     int mainchoice;
     do {
@@ -61,13 +60,13 @@ int main()
             showVectorInfos(&animalV);
             break;
         case 3:
-            // reportanimal(); hayvanýn özellikleri ve bildirilme sebebi için
+            reportanimal();
             break;
         case 4: {
             int fourthchoice;
             bool returnToMainMenu = false;
             do {
-                cout << "Choose one to adopt." << endl;
+                cout << "\033[1;34mChoose one to adopt." << endl;
                 cout << "1.Pet shelter." << endl;
                 cout << "2.Someone else." << endl;
                 cout << "3.Return the main menu." << endl;
@@ -75,7 +74,7 @@ int main()
 
                 switch (fourthchoice) {
                 case 1:
-                    fromshelter();
+                    // fromshelter();
                     break;
                 case 2:
                     // fromsomeone();
@@ -97,6 +96,7 @@ int main()
             return 1;
         default:
             cout << "Invalid choice.Please choose 1-6.";
+            return 0;
         }
 
     } while (mainchoice != 6);

@@ -5,7 +5,7 @@
 using namespace std;
 
 // Person class is a subclass of Animal class.
-class Person {
+class PersonsInfo {
 protected:
     string id;
     string name;
@@ -16,12 +16,12 @@ protected:
 
 public:
     //Constructor and Destructor
-    Person();
-    Person(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
-    ~Person();
+    PersonsInfo();
+    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
+    ~PersonsInfo();
 };
 
-class Animals : private Person {
+class AnimalsInfo : private PersonsInfo {
 
 private:
     string species;
@@ -34,9 +34,9 @@ private:
 public:
 
     //Constructor and Destructor
-    Animals();
-    Animals(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
-    ~Animals();
+    AnimalsInfo();
+    AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
+    ~AnimalsInfo();
 
     // Encapsulation for Animal class
     string getSpecies();
@@ -76,4 +76,5 @@ public:
 
     string getPersonDescription();
     void setPersonDescription(string personDescription);
-}; Animal.h
+};
+
