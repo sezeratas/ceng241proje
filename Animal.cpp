@@ -20,7 +20,7 @@ PersonsInfo::PersonsInfo() {
 
 	cout << "New person created." << endl;
 	cout << "The person's id is: " << id << endl;
-	cout << "*****************************" << endl;
+	cout << "***********" << endl;
 }
 
 PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) {
@@ -34,7 +34,7 @@ PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNum
 	this->personDescription = personDescription;
 
 	cout << "Person " << id << " updated." << endl;
-	cout << "*****************************" << endl;
+	cout << "***********" << endl;
 }
 
 AnimalsInfo::AnimalsInfo() {
@@ -49,8 +49,8 @@ AnimalsInfo::AnimalsInfo() {
 	animalStatus = "-Not known-";
 
 	animalC = animalcounter;
-	
-	cout << "New animal created. (By " << /*PersonsInfo.getId()*/ << ")" << endl << endl;
+
+	cout << "New animal created. (By " << /PersonsInfo.getId()/ << ")" << endl << endl;
 }
 
 /*AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) :
@@ -71,13 +71,13 @@ AnimalsInfo::AnimalsInfo() {
 }*/
 
 PersonsInfo::~PersonsInfo() {
-	cout << "Person " << id <<"  deleted." << endl << endl;
+	cout << "Person " << id << "  deleted." << endl << endl;
 	usercounter--;
 }
 
 AnimalsInfo::~AnimalsInfo() {
-	animalcounter --;
-	cout << "Animal deleted." << "(" << /*id*/ << ")" << endl << endl;
+	animalcounter--;
+	cout << "Animal deleted." << "(" << /id/ << ")" << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.

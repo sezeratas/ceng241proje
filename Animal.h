@@ -4,7 +4,7 @@
 #include<vector>
 using namespace std;
 
-class AnimalsInfo{
+class AnimalsInfo {
 
 private:
     string species;

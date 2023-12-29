@@ -52,7 +52,7 @@ void showInfos(PersonsInfo* person) {
 	cout << "Animal's owner's phone number: " << person->getPhoneNumber() << endl;
 	cout << "Animal's owner's email address: " << person->getEmailAddress() << endl;
 	cout << "Animal's owner's description: " << person->getPersonDescription() << endl;
-	cout << "***********************************" << endl << endl;
+	cout << "*************" << endl << endl;
 }
 
 /*void AddAdvertisement(string animalStatus) {
@@ -125,8 +125,8 @@ void showInfos(PersonsInfo* person) {
 		animal->setAnimalStatus("PotentialLostAnimal");
 	}
 
-	cout << "*****************************" << endl;
-	
+	cout << "***********" << endl;
+
 	animalV.push_back(animal);
 }
 */
@@ -195,7 +195,7 @@ void showInfos(PersonsInfo* person) {
 		animal->setAnimalStatus("PotentialLostAnimal");
 	}
 
-	cout << "*****************************" << endl;
+	cout << "***********" << endl;
 
 	animalV.push_back(animal);
 
@@ -289,12 +289,12 @@ void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus) {
 		}
 		else if ((*pV)[i]->getAnimalStatus() == "PotentialLostAnimal") {
 			showInfos((*pV)[i]);
-		}	
+		}
 	}
 }
 void showVectorInfos(vector<PersonsInfo*>* pV) {
 	for (int i = 0; i < pV->size(); i++) {
-			showInfos((*pV)[i]);
+		showInfos((*pV)[i]);
 	}
 }
 
