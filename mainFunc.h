@@ -12,19 +12,19 @@ using namespace std;
 
 //  Karisikligi onlemek ve okunabilirligi arttirmak icin.
 void showInfos(PersonsInfo* person);
-void AddAdvertisement(string animalStatus);
-void AddAnotherAdvertisement(string animalStatus);
-void DeleteAdvertisement(string userid);
+//void AddAdvertisement(string animalStatus);
+//void AddAnotherAdvertisement(string animalStatus);
+//void DeleteAdvertisement(string userid);
 void initialAnimals();
 void mainScreen();
-void idAuthentication(string user);
+//void idAuthentication(string user);
 void myAdvertisements();
 void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus);
-void DeleteAllAdvertisements();
-void EditAdvertisements();
-void AddAdvertisementsWithStatus();
+//void DeleteAllAdvertisements();
+//void EditAdvertisements();
+//void AddAdvertisementsWithStatus();
 
-void AddAdvertisementsWithStatus() {
+/*void AddAdvertisementsWithStatus() {
 	int chcnum;
 	cout << "Which reports do you want to add: " << endl;
 	cout << "1) My lost pet report." << endl;
@@ -36,7 +36,7 @@ void AddAdvertisementsWithStatus() {
 	else if (chcnum == 2) {
 		AddAdvertisement("PotentialLostAnimal");
 	}
-}
+}*/
 
 void showInfos(PersonsInfo* person) {
 	cout << "Animal's species: " << person->animal.getSpecies() << endl;
@@ -218,35 +218,35 @@ void initialAnimals() {
 	PersonsInfo* person2 = new PersonsInfo();
 	PersonsInfo* person3 = new PersonsInfo();
 
-	animal1->setSpecies("Dog");
-	animal1->setBreed("Golden");
-	animal1->setGender("Male");
-	animal1->setAge("2 years old.");
-	animal1->setLocationFound("Cankaya Uni");
-	animal1->setAnimalDescription("The red collar");
-	animal1->setAnimalStatus("UsersLostAnimal");
-	animal1->setName("Sezer");
-	animal1->setSurname("Atas");
-	animal1->setPhoneNumber("0534 11111");
-	animal1->setEmailAddress("aaaaaa@gmail.com");
-	animal1->setPersonDescription("inan bilmiyorum");
+	person1->animal.setSpecies("Dog");
+	person1->animal.setBreed("Golden");
+	person1->animal.setGender("Male");
+	person1->animal.setAge("2 years old.");
+	person1->animal.setLocationFound("Cankaya Uni");
+	person1->animal.setAnimalDescription("The red collar");
+	person1->animal.setAnimalStatus("UsersLostAnimal");
+	person1->setName("Sezer");
+	person1->setSurname("Atas");
+	person1->setPhoneNumber("0534 11111");
+	person1->setEmailAddress("aaaaaa@gmail.com");
+	person1->setPersonDescription("inan bilmiyorum");
 
-	animal2->setSpecies("Cat");
-	animal2->setBreed("Tekir");
-	animal2->setGender("Female");
-	animal2->setAge("5 months old.");
-	animal2->setLocationFound("Koru");
-	animal2->setAnimalDescription("Blue eyes.");
-	animal2->setAnimalStatus("UsersLostAnimal");
-	animal2->setName("Yusuf");
-	animal2->setSurname("Ozcan");
-	animal2->setPhoneNumber("0535 666666");
-	animal2->setEmailAddress("yyyyyyy@gmail.com");
-	animal2->setPersonDescription("inan simdi biliyorum");
+	person2->animal.setSpecies("Cat");
+	person2->animal.setBreed("Tekir");
+	person2->animal.setGender("Female");
+	person2->animal.setAge("5 months old.");
+	person2->animal.setLocationFound("Koru");
+	person2->animal.setAnimalDescription("Blue eyes.");
+	person2->animal.setAnimalStatus("UsersLostAnimal");
+	person2->setName("Yusuf");
+	person2->setSurname("Ozcan");
+	person2->setPhoneNumber("0535 666666");
+	person2->setEmailAddress("yyyyyyy@gmail.com");
+	person2->setPersonDescription("inan simdi biliyorum");
 
-	animalV.push_back(animal1);
-	animalV.push_back(animal2);
-	animalV.push_back(animal3);
+	personV.push_back(person1);
+	personV.push_back(person2);
+	personV.push_back(person3);
 }
 
 void mainScreen() {
@@ -273,21 +273,21 @@ void myAdvertisements() {
 	cout << "9.Return the main menu." << endl;
 }
 
-void idAuthentication(string user) {
+/*void idAuthentication(string user) {
 
 	for (int i = 0; i < animalV.size(); i++) {
 		if (user == animalV[i]->getId()) {
 			personsAnimalV.push_back(animalV[i]);
 		}
 	}
-}
+}*/
 
-void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus) {
+void showVectorInfos(vector<PersonsInfo*>* pV, string animalStatus) {
 	for (int i = 0; i < pV->size(); i++) {
-		if ((*pV)[i]->getAnimalStatus() == "UsersLostAnimal") {
+		if ((*pV)[i]->animal.getAnimalStatus() == "UsersLostAnimal") {
 			showInfos((*pV)[i]);
 		}
-		else if ((*pV)[i]->getAnimalStatus() == "PotentialLostAnimal") {
+		else if ((*pV)[i]->animal.getAnimalStatus() == "PotentialLostAnimal") {
 			showInfos((*pV)[i]);
 		}
 	}
@@ -298,15 +298,15 @@ void showVectorInfos(vector<PersonsInfo*>* pV) {
 	}
 }
 
-void DeleteAllAdvertisements() {
+/*void DeleteAllAdvertisements() {
 	for (int i = 0; i < animalV.size(); i++) {
 		delete animalV[i];
 	}
 	animalV.clear();
 	personsAnimalV.clear();
-}
+}*/
 
-void EditAdvertisements() {
+/*void EditAdvertisements() {
 	int choice;
 	std::cout << "Select the information you want to change: " << endl;
 	std::cout << "1) Animal's species " << endl;
@@ -413,7 +413,7 @@ void EditAdvertisements() {
 	}
 
 	}
-}
+}*/
 
 /*void ShowAllAdvertisements() {
 	for (int i = 0; i < animalV.size(); i++) {

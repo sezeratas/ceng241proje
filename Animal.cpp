@@ -50,7 +50,7 @@ AnimalsInfo::AnimalsInfo() {
 
 	animalC = animalcounter;
 
-	cout << "New animal created. (By " << /PersonsInfo.getId()/ << ")" << endl << endl;
+	cout << "New animal created. (By " << "PersonsInfo.getId()" << ")" << endl << endl;
 }
 
 /*AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) :
@@ -77,7 +77,7 @@ PersonsInfo::~PersonsInfo() {
 
 AnimalsInfo::~AnimalsInfo() {
 	animalcounter--;
-	cout << "Animal deleted." << "(" << /id/ << ")" << endl << endl;
+	cout << "Animal deleted." << "(" << "id" << ")" << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.
