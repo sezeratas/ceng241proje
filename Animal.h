@@ -61,7 +61,8 @@ protected:
 
 public:
 
-    AnimalsInfo animal;
+    //AnimalsInfo animal;
+    
     //Constructor and Destructor
     PersonsInfo();
     PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);

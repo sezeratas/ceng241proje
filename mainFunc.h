@@ -6,7 +6,7 @@
 #include <string>
 
 vector<PersonsInfo*> personV;
-vector<PersonsInfo*> personsAnimalV;
+//vector<PersonsInfo*> personsAnimalV;
 
 using namespace std;
 
@@ -39,7 +39,7 @@ void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus);
 }*/
 
 void showInfos(PersonsInfo* person) {
-	cout << "Animal's species: " << person->animal.getSpecies() << endl;
+	cout << "Animal's species: " << person->(personsAnimalV)[i]->getSpecies() << endl;
 	cout << "Animal's breed: " << person->animal.getBreed() << endl;
 	cout << "Animal's gender: " << person->animal.getGender() << endl;
 	cout << "Animal's age: " << person->animal.getAge() << endl;
@@ -273,7 +273,7 @@ void myAdvertisements() {
 	cout << "9.Return the main menu." << endl;
 }
 
-/*void idAuthentication(string user) {
+void idAuthentication(string user) {
 
 	for (int i = 0; i < animalV.size(); i++) {
 		if (user == animalV[i]->getId()) {
