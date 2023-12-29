@@ -4,24 +4,7 @@
 #include<vector>
 using namespace std;
 
-// Person class is a subclass of Animal class.
-class PersonsInfo {
-protected:
-    string id;
-    string name;
-    string surname;
-    string phoneNumber;
-    string emailAddress;
-    string personDescription;
-
-public:
-    //Constructor and Destructor
-    PersonsInfo();
-    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
-    ~PersonsInfo();
-};
-
-class AnimalsInfo : private PersonsInfo {
+class AnimalsInfo{
 
 private:
     string species;
@@ -38,7 +21,7 @@ public:
 
     //Constructor and Destructor
     AnimalsInfo();
-    AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
+    //AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
     ~AnimalsInfo();
 
     // Encapsulation for Animal class
@@ -65,6 +48,24 @@ public:
 
     string getAnimalStatus();
     void setAnimalStatus(string animalStatus);
+};
+
+class PersonsInfo {
+protected:
+    string id;
+    string name;
+    string surname;
+    string phoneNumber;
+    string emailAddress;
+    string personDescription;
+
+public:
+
+    AnimalsInfo animal;
+    //Constructor and Destructor
+    PersonsInfo();
+    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
+    ~PersonsInfo();
 
     // Encapsulation for Person class
 
