@@ -4,7 +4,12 @@
 #include<vector>
 using namespace std;
 
-class AnimalsInfo{
+class Ilan {
+    int ilanId;
+    string ilanDate;
+};
+
+class AnimalsInfo : Ilan {
 
 public:
     string species;
@@ -50,7 +55,7 @@ public:
     void setAnimalStatus(string animalStatus);
 };
 
-class PersonsInfo {
+class PersonsInfo : Ilan{
 protected:
     string id;
     string name;
