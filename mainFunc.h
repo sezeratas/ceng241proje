@@ -38,9 +38,9 @@ void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus);
 	}
 }*/
 
-void showInfos(PersonsInfo* person) {
-	cout << "Animal's species: " << person->(personsAnimalV)[i]->getSpecies() << endl;
-	cout << "Animal's breed: " << person->animal.getBreed() << endl;
+void showInfos(PersonsInfo* person, int i) {
+	cout << "Animal's species: " << person->personsAnimalV->getSpecies() << endl;
+	cout << "Animal's breed: " << person->personsAnimalV.getBreed() << endl;
 	cout << "Animal's gender: " << person->animal.getGender() << endl;
 	cout << "Animal's age: " << person->animal.getAge() << endl;
 	cout << "Animal's location: " << person->animal.getLocationFound() << endl;
@@ -54,7 +54,6 @@ void showInfos(PersonsInfo* person) {
 	cout << "Animal's owner's description: " << person->getPersonDescription() << endl;
 	cout << "*************" << endl << endl;
 }
-
 /*void AddAdvertisement(string animalStatus) {
 
 	AnimalsInfo* animal = new AnimalsInfo();
@@ -218,26 +217,26 @@ void initialAnimals() {
 	PersonsInfo* person2 = new PersonsInfo();
 	PersonsInfo* person3 = new PersonsInfo();
 
-	person1->animal.setSpecies("Dog");
-	person1->animal.setBreed("Golden");
-	person1->animal.setGender("Male");
-	person1->animal.setAge("2 years old.");
-	person1->animal.setLocationFound("Cankaya Uni");
-	person1->animal.setAnimalDescription("The red collar");
-	person1->animal.setAnimalStatus("UsersLostAnimal");
+	person1->personsAnimalV[0]->setSpecies("Dog");
+	person1->personsAnimalV[0]->setBreed("Golden");
+	person1->personsAnimalV[0]->setGender("Male");
+	person1->personsAnimalV[0]->setAge("2 years old.");
+	person1->personsAnimalV[0]->setLocationFound("Cankaya Uni");
+	person1->personsAnimalV[0]->setAnimalDescription("The red collar");
+	person1->personsAnimalV[0]->setAnimalStatus("UsersLostAnimal");
 	person1->setName("Sezer");
 	person1->setSurname("Atas");
 	person1->setPhoneNumber("0534 11111");
 	person1->setEmailAddress("aaaaaa@gmail.com");
 	person1->setPersonDescription("inan bilmiyorum");
 
-	person2->animal.setSpecies("Cat");
-	person2->animal.setBreed("Tekir");
-	person2->animal.setGender("Female");
-	person2->animal.setAge("5 months old.");
-	person2->animal.setLocationFound("Koru");
-	person2->animal.setAnimalDescription("Blue eyes.");
-	person2->animal.setAnimalStatus("UsersLostAnimal");
+	person2->personsAnimalV[0]->setSpecies("Cat");
+	person2->personsAnimalV[0]->setBreed("Tekir");
+	person2->personsAnimalV[0]->setGender("Female");
+	person2->personsAnimalV[0]->setAge("5 months old.");
+	person2->personsAnimalV[0]->setLocationFound("Koru");
+	person2->personsAnimalV[0]->setAnimalDescription("Blue eyes.");
+	person2->personsAnimalV[0]->setAnimalStatus("UsersLostAnimal");
 	person2->setName("Yusuf");
 	person2->setSurname("Ozcan");
 	person2->setPhoneNumber("0535 666666");
@@ -273,7 +272,7 @@ void myAdvertisements() {
 	cout << "9.Return the main menu." << endl;
 }
 
-void idAuthentication(string user) {
+/*void idAuthentication(string user) {
 
 	for (int i = 0; i < animalV.size(); i++) {
 		if (user == animalV[i]->getId()) {
@@ -284,11 +283,13 @@ void idAuthentication(string user) {
 
 void showVectorInfos(vector<PersonsInfo*>* pV, string animalStatus) {
 	for (int i = 0; i < pV->size(); i++) {
-		if ((*pV)[i]->animal.getAnimalStatus() == "UsersLostAnimal") {
-			showInfos((*pV)[i]);
-		}
-		else if ((*pV)[i]->animal.getAnimalStatus() == "PotentialLostAnimal") {
-			showInfos((*pV)[i]);
+		for (int j = 0; j < (*pV)[i]->personsAnimalV.size(); j++) {
+			if ((*pV)[i]->personsAnimalV[j].getAnimalStatus() == "UsersLostAnimal") {
+				showInfos((*pV)[i]);
+			}
+			else if ((*pV)[i]->personsAnimalV[j].getAnimalStatus() == "PotentialLostAnimal") {
+				showInfos((*pV)[i]);
+			}
 		}
 	}
 }

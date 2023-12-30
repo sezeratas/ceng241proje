@@ -4,9 +4,9 @@
 #include<vector>
 using namespace std;
 
-class AnimalsInfo {
+class AnimalsInfo{
 
-private:
+public:
     string species;
     string breed;
     string gender;
@@ -17,7 +17,7 @@ private:
     string animalStatus;
 
     int animalC;
-public:
+//public:
 
     //Constructor and Destructor
     AnimalsInfo();
@@ -61,7 +61,8 @@ protected:
 
 public:
 
-    //AnimalsInfo animal;
+    vector<AnimalsInfo*> personsAnimalV;
+
     
     //Constructor and Destructor
     PersonsInfo();
