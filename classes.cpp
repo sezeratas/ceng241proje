@@ -33,7 +33,7 @@ PersonsInfo::PersonsInfo() {
 
 	cout << "New person created." << endl;
 	cout << "The person's id is: " << id << endl;
-	cout << "*****************************" << endl;
+	cout << "***********" << endl;
 }
 
 PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) {
@@ -47,7 +47,7 @@ PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNum
 	this->personDescription = personDescription;
 
 	cout << "Person " << id << " updated." << endl;
-	cout << "*****************************" << endl;
+	cout << "***********" << endl;
 }
 
 AnimalsInfo::AnimalsInfo() {
@@ -59,14 +59,14 @@ AnimalsInfo::AnimalsInfo() {
 	locationFound = "-Not known-";
 	animalDescription = "-Not known-";
 
-	animalCode = locationFound + "/" + species + "/" + breed; + "/" + to_string(animalcounter) + "/";   // Ankara/Dog/Golden/4/L
+	animalStatus = "-Not known-";
 
 	animalC = animalcounter;
-	
-	cout << "New animal created. (By " << id << ")" << endl << endl;
+
+	cout << "New animal created. (By " << "PersonsInfo.getId()" << ")" << endl << endl;
 }
 
-AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) : 
+/*AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) :
 	PersonsInfo(id, name, surname, phoneNumber, emailAddress, personDescription)
 {
 
@@ -78,21 +78,19 @@ AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNum
 	this->emailAddress = emailAddress;
 	this->personDescription = personDescription;
 
-	animalCode = locationFound + "/" + species + "/" + breed; +"/" + to_string(animalcounter) + "/";  // Ankara/Dog/Golden/5/A
-
 	animalC = animalcounter;
 
 	cout << "New animal created. (By " << id << ")" << endl << endl;
-}
+}*/
 
 PersonsInfo::~PersonsInfo() {
-	cout << "Person " << id <<"  deleted." << endl << endl;
+	cout << "Person " << id << "  deleted." << endl << endl;
 	usercounter--;
 }
 
 AnimalsInfo::~AnimalsInfo() {
-	animalcounter --;
-	cout << "Animal deleted." << "(" << id << ")" << endl << endl;
+	animalcounter--;
+	cout << "Animal deleted." << "(" << "id" << ")" << endl << endl;
 }
 
 //  Encapsulation for Animal class variables.
@@ -103,13 +101,6 @@ int AnimalsInfo::getAnimalC() {
 /*void AnimalsInfo::setAnimalCode(string animalnum) {
 	animalC += animalnum;
 }*/
-
-string AnimalsInfo::getAnimalCode() {
-	return animalCode;
-}
-void AnimalsInfo::setAnimalCode(string animalStatus) {
-	animalCode += animalStatus;
-}
 
 string AnimalsInfo::getSpecies() {
 	return species;
@@ -153,9 +144,16 @@ void AnimalsInfo::setAnimalDescription(string description) {
 	this->animalDescription = description;
 }
 
+string AnimalsInfo::getAnimalStatus() {
+	return animalStatus;
+}
+void AnimalsInfo::setAnimalStatus(string animalStatus) {
+	this->animalStatus = animalStatus;
+}
+
 //  Encapsulation for Person class variables.
 
-string AnimalsInfo::getId() {
+string PersonsInfo::getId() {
 	return id;
 }
 
@@ -164,37 +162,37 @@ void Animals::setId(int idNumber) {
 	id = "@user" + to_string(idNumber);
 }*/
 
-string AnimalsInfo::getName() {
+string PersonsInfo::getName() {
 	return name;
 }
-void AnimalsInfo::setName(string name) {
+void PersonsInfo::setName(string name) {
 	this->name = name;
 }
 
-string AnimalsInfo::getSurname() {
+string PersonsInfo::getSurname() {
 	return surname;
 }
-void AnimalsInfo::setSurname(string surname) {
+void PersonsInfo::setSurname(string surname) {
 	this->surname = surname;
 }
 
-string AnimalsInfo::getPhoneNumber() {
+string PersonsInfo::getPhoneNumber() {
 	return phoneNumber;
 }
-void AnimalsInfo::setPhoneNumber(string phoneNumber) {
+void PersonsInfo::setPhoneNumber(string phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 
-string AnimalsInfo::getEmailAddress() {
+string PersonsInfo::getEmailAddress() {
 	return emailAddress;
 }
-void AnimalsInfo::setEmailAddress(string emailAddress) {
+void PersonsInfo::setEmailAddress(string emailAddress) {
 	this->emailAddress = emailAddress;
 }
 
-string AnimalsInfo::getPersonDescription() {
+string PersonsInfo::getPersonDescription() {
 	return personDescription;
 }
-void AnimalsInfo::setPersonDescription(string personDescription) {
+void PersonsInfo::setPersonDescription(string personDescription) {
 	this->personDescription = personDescription;
 }

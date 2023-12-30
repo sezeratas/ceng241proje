@@ -56,7 +56,7 @@ int main()
 
     retCode = SQLAllocHandle(SQL_HANDLE_STMT, hdbc, &SQLStatementHandle);
     
-//fonk basÄ±
+//fonk basý
 
     WCHAR wszInput[1000];
 
@@ -84,11 +84,11 @@ int main()
     
     initialAnimals();
 
-    showVectorInfos(&personsAnimalV);
+    showVectorInfos(&personV);
 
     //showInfos(animalV[0]);   //show infos fonksiyonuyla istediginiz bir ilanin guncel durumuna bakabilirsiniz.
 
-    int mainchoice;
+    /*int mainchoice;
     do {
         mainScreen();
         cin >> mainchoice;
@@ -111,7 +111,7 @@ int main()
 
                 switch (firstchoice) {
                 case 1:
-                    AddAnotherAdvertisement();
+                    AddAnotherAdvertisement("UsersLostAnimal");
                     break;
                 case 2:
                     DeleteAdvertisement(personsAnimalV[0]->getId());
@@ -120,9 +120,21 @@ int main()
                     EditAdvertisements();
                     break;
                 case 4:
-                    showVectorInfos(&personsAnimalV);
+                    showVectorInfos(&personsAnimalV, "UsersLostAnimal");
                     break;
                 case 5:
+                    AddAnotherAdvertisement("PotentialLostAnimal");
+                    break;
+                case 6:
+                    DeleteAdvertisement(personsAnimalV[0]->getId());
+                    break;
+                case 7:
+                    EditAdvertisements();
+                    break;
+                case 8:
+                    showVectorInfos(&personsAnimalV, "PotentialLostAnimal");
+                    break;
+                case 9:
                     returnToMainMenu = true;
                     // it will return to the main menu
                     break;
@@ -136,45 +148,15 @@ int main()
             showVectorInfos(&animalV);
             break;
         case 3:
-            // reportanimal(); hayvanï¿½n ï¿½zellikleri ve bildirilme sebebi iï¿½in
+            AddAdvertisementsWithStatus();
             break;
-        case 4: {
-            int fourthchoice;
-            bool returnToMainMenu = false;
-            do {
-                cout << "Choose one to adopt." << endl;
-                cout << "1.Pet shelter." << endl;
-                cout << "2.Someone else." << endl;
-                cout << "3.Return the main menu." << endl;
-                cin >> fourthchoice;
-
-                switch (fourthchoice) {
-                case 1:
-                    // fromshelter();
-                    break;
-                case 2:
-                    // fromsomeone();
-                    break;
-                case 3:
-                    returnToMainMenu = true;
-                    // it will return to the main menu
-                    break;
-                default:
-                    cout << "Invalid choice. Please choose 1-3." << endl;
-                }
-            } while (!returnToMainMenu);
-                break;
-        }
-        case 5:
-            // adoptmyanimal();
-            break;
-        case 6:
+        case 4:
             return 1;
         default:
             cout << "Invalid choice.Please choose 1-6.";
         }
 
-    } while (mainchoice != 6);
+    } while (mainchoice != 6);*/
 
     return 0;
 }

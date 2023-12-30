@@ -17,37 +17,26 @@ protected:
     string personDescription;
 
 public:
-    //Constructor and Destructor
-    PersonsInfo();
-    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
-    ~PersonsInfo();
-};
-
-class AnimalsInfo : private PersonsInfo {
-
-private:
     string species;
     string breed;
     string gender;
     string age;
     string locationFound;
     string animalDescription;
-    string animalCode;  // L: Lost animal, R: Report animal, A: Adopt animal 
+
+    string animalStatus;
 
     int animalC;
-public:
+//public:
 
     //Constructor and Destructor
     AnimalsInfo();
-    AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
+    //AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
     ~AnimalsInfo();
 
     // Encapsulation for Animal class
     int getAnimalC();
     //void setAnimalC(string animalnumber);
-
-    string getAnimalCode();
-    void setAnimalCode(string animalStatus);
 
     string getSpecies();
     void setSpecies(string species);
@@ -66,6 +55,29 @@ public:
 
     string getAnimalDescription();
     void setAnimalDescription(string animalDescription);
+
+    string getAnimalStatus();
+    void setAnimalStatus(string animalStatus);
+};
+
+class PersonsInfo {
+protected:
+    string id;
+    string name;
+    string surname;
+    string phoneNumber;
+    string emailAddress;
+    string personDescription;
+
+public:
+
+    vector<AnimalsInfo*> personsAnimalV;
+
+    
+    //Constructor and Destructor
+    PersonsInfo();
+    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
+    ~PersonsInfo();
 
     // Encapsulation for Person class
 
