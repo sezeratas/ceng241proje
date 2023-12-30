@@ -1,11 +1,24 @@
-#include "Animal.h"
+#include "classes.h"
 #include <string>
 #include <vector>
+#include <iostream>
+#include "mainFunc.h"
+#include <windows.h>
+#include <sql.h>
+#include <sqlext.h>
+#include <stdio.h>
+#include <conio.h>
+#include <tchar.h>
+#include <stdlib.h>
+#include <sal.h>
+
+
 
 using namespace std;
 
 int usercounter = 0;
 int animalcounter = 0;
+
 
 //Constructors and Destructors
 PersonsInfo::PersonsInfo() {
