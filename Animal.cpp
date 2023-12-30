@@ -38,6 +38,7 @@ PersonsInfo::PersonsInfo(string id, string name, string surname, string phoneNum
 }
 
 AnimalsInfo::AnimalsInfo() {
+	ilanid = NULL;
 	animalcounter += 1;
 	species = "-Not known-";
 	breed = "-Not known-";
@@ -53,8 +54,7 @@ AnimalsInfo::AnimalsInfo() {
 	cout << "New animal created. (By " << "PersonsInfo.getId()" << ")" << endl << endl;
 }
 
-/*AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription) :
-	PersonsInfo(id, name, surname, phoneNumber, emailAddress, personDescription)
+/*AnimalsInfo::AnimalsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription)
 {
 
 	this->id = id;

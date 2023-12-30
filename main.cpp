@@ -3,6 +3,10 @@
 #include "mainFunc.h"
 #include <string>
 
+int main1() {
+
+    return 0;
+}
 
 using namespace std;
 

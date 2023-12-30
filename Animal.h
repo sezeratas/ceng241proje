@@ -4,7 +4,13 @@
 #include<vector>
 using namespace std;
 
-class AnimalsInfo{
+class ilan {
+public:
+    int ilanid;
+    string ilanTarihi;
+};
+
+class AnimalsInfo : public ilan{
 
 public:
     string species;
@@ -58,7 +64,6 @@ protected:
     string phoneNumber;
     string emailAddress;
     string personDescription;
-
 public:
 
     vector<AnimalsInfo*> personsAnimalV;
