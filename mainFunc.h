@@ -11,7 +11,7 @@ vector<PersonsInfo*> personV;
 using namespace std;
 
 //  Karisikligi onlemek ve okunabilirligi arttirmak icin.
-void showInfos(PersonsInfo* person);
+void showInfos(PersonsInfo* person, int i);
 //void AddAdvertisement(string animalStatus);
 //void AddAnotherAdvertisement(string animalStatus);
 //void DeleteAdvertisement(string userid);
@@ -19,7 +19,9 @@ void initialAnimals();
 void mainScreen();
 //void idAuthentication(string user);
 void myAdvertisements();
+
 void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus);
+
 //void DeleteAllAdvertisements();
 //void EditAdvertisements();
 //void AddAdvertisementsWithStatus();
@@ -39,13 +41,13 @@ void showVectorInfos(vector<AnimalsInfo*>* pV, string animalStatus);
 }*/
 
 void showInfos(PersonsInfo* person, int i) {
-	cout << "Animal's species: " << person->personsAnimalV->getSpecies() << endl;
-	cout << "Animal's breed: " << person->personsAnimalV.getBreed() << endl;
-	cout << "Animal's gender: " << person->animal.getGender() << endl;
-	cout << "Animal's age: " << person->animal.getAge() << endl;
-	cout << "Animal's location: " << person->animal.getLocationFound() << endl;
-	cout << "Animal's description: " << person->animal.getAnimalDescription() << endl << endl;
-	cout << "Animal's status: " << person->animal.getAnimalStatus() << endl << endl;
+	cout << "Animal's species: " << person->personsAnimalV[i]->getSpecies() << endl;
+	cout << "Animal's breed: " << person->personsAnimalV[i]->getBreed() << endl;
+	cout << "Animal's gender: " << person->personsAnimalV[i]->getGender() << endl;
+	cout << "Animal's age: " << person->personsAnimalV[i]->getAge() << endl;
+	cout << "Animal's location: " << person->personsAnimalV[i]->getLocationFound() << endl;
+	cout << "Animal's description: " << person->personsAnimalV[i]->getAnimalDescription() << endl << endl;
+	cout << "Animal's status: " << person->personsAnimalV[i]->getAnimalStatus() << endl << endl;
 
 	cout << "Animal's owner's name: " << person->getName() << endl;
 	cout << "Animal's owner's surname: " << person->getSurname() << endl;
@@ -127,8 +129,8 @@ void showInfos(PersonsInfo* person, int i) {
 	cout << "***********" << endl;
 
 	animalV.push_back(animal);
-}
-*/
+}*/
+
 /*void AddAnotherAdvertisement(string animalStatus) {
 
 	string id = personsAnimalV[0]->getId();
@@ -281,21 +283,24 @@ void myAdvertisements() {
 	}
 }*/
 
-void showVectorInfos(vector<PersonsInfo*>* pV, string animalStatus) {
+/*void showVectorInfos(vector<PersonsInfo*>* pV, string animalStatus) {
 	for (int i = 0; i < pV->size(); i++) {
 		for (int j = 0; j < (*pV)[i]->personsAnimalV.size(); j++) {
-			if ((*pV)[i]->personsAnimalV[j].getAnimalStatus() == "UsersLostAnimal") {
-				showInfos((*pV)[i]);
+			if (*(pV)[i]->personsAnimalV[j].getAnimalStatus() == "UsersLostAnimal") {
+				showInfos((*pV)[i],j);
 			}
 			else if ((*pV)[i]->personsAnimalV[j].getAnimalStatus() == "PotentialLostAnimal") {
-				showInfos((*pV)[i]);
+				showInfos((*pV)[i],j);
 			}
 		}
 	}
-}
+}*/
 void showVectorInfos(vector<PersonsInfo*>* pV) {
 	for (int i = 0; i < pV->size(); i++) {
-		showInfos((*pV)[i]);
+		for (int j = 0; j < (*pV)[i]->personsAnimalV.size(); j++) {
+			showInfos((*pV)[i],j);
+		}
+		
 	}
 }
 

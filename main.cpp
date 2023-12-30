@@ -15,7 +15,7 @@ int main()
 
     //showInfos(animalV[0]);   //show infos fonksiyonuyla istediginiz bir ilanin guncel durumuna bakabilirsiniz.
 
-    int mainchoice;
+    /*int mainchoice;
     do {
         mainScreen();
         cin >> mainchoice;
@@ -83,7 +83,7 @@ int main()
             cout << "Invalid choice.Please choose 1-6.";
         }
 
-    } while (mainchoice != 6);
+    } while (mainchoice != 6);*/
 
     return 0;
 }
