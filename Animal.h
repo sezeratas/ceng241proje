@@ -1,27 +1,10 @@
-﻿#pragma once
+﻿﻿#pragma once
 
 #include<iostream>
 #include<vector>
 using namespace std;
 
-// Person class is a subclass of Animal class.
-class PersonsInfo {
-protected:
-    string id;
-    string name;
-    string surname;
-    string phoneNumber;
-    string emailAddress;
-    string personDescription;
-
-public:
-    //Constructor and Destructor
-    PersonsInfo();
-    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
-    ~PersonsInfo();
-};
-
-class AnimalsInfo : private PersonsInfo {
+class AnimalsInfo {
 
 private:
     string species;
@@ -30,15 +13,20 @@ private:
     string age;
     string locationFound;
     string animalDescription;
-    //string animalCode;
+    string animalStatus;
+
+    int animalC;
 public:
 
     //Constructor and Destructor
     AnimalsInfo();
-    AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
+    //AnimalsInfo(string, string, string, string, string, string);  // Constructor overloading for person's multiple pet.
     ~AnimalsInfo();
 
     // Encapsulation for Animal class
+    int getAnimalC();
+    //void setAnimalC(string animalnumber);// buna da gerek yok
+
     string getSpecies();
     void setSpecies(string species);
 
@@ -57,10 +45,32 @@ public:
     string getAnimalDescription();
     void setAnimalDescription(string animalDescription);
 
+    string getAnimalStatus();
+    void setAnimalStatus(string animalStatus);
+    //friend void showInfos(PersonsInfo* person);
+};
+
+class PersonsInfo {
+protected:
+    string id;
+    string name;
+    string surname;
+    string phoneNumber;
+    string emailAddress;
+    string personDescription;
+
+public:
+
+    AnimalsInfo animal;
+
+    //Constructor and Destructor
+    PersonsInfo();
+    PersonsInfo(string id, string name, string surname, string phoneNumber, string emailAddress, string personDescription);
+    ~PersonsInfo();
     // Encapsulation for Person class
 
     string getId();
-    //void setId(int idNumber);
+    //void setId(int idNumber); // bence gerek yok
 
     string getName();
     void setName(string name);
@@ -76,5 +86,5 @@ public:
 
     string getPersonDescription();
     void setPersonDescription(string personDescription);
+    //friend void showInfos(PersonsInfo* person);
 };
-
