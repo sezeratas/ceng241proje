@@ -4,6 +4,8 @@
 #include<vector>
 using namespace std;
 
+int sqlf(string s1);
+
 // Person class is a subclass of Animal class.
 class PersonsInfo {
 protected:
